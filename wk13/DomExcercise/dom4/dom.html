@@ -13,10 +13,10 @@
 		<div>box 1</div>
 		<div>box 2</div>
 		<div>box 3</div>
-		<div>box 4</div>
+		<!-- <div>box 4</div>
 		<div>box 5</div>
 		<div>box 6</div>
-		<div>box 7</div>
+		<div>box 7</div> -->
 
 	</div>
 
@@ -32,7 +32,17 @@
 	}
 	//---------------------------------------------
 
+	var container = document.querySelector('#container');
+	var childArray = container.children;
+	
+	var listOfStars = [];
+	for (let i = 0; i < childArray.length; i++) {
+		listOfStars.push(Number(prompt('no. of stars')));
+	}
 
+	for (let i = 0; i < childArray.length; i++) {
+		childArray[i].innerHTML = makeStars(listOfStars[i]);
+	}
 
 	</script>
 	

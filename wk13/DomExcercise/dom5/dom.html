@@ -12,11 +12,11 @@
 		<div>box 0</div>
 		<div>box 1</div>
 		<div>box 2</div>
-		<div>box 3</div>
+		<!-- <div>box 3</div>
 		<div>box 4</div>
 		<div>box 5</div>
 		<div>box 6</div>
-		<div>box 7</div>
+		<div>box 7</div> -->
 
 	</div>
 
@@ -40,8 +40,23 @@
 		return sTree;
 	}
 	//---------------------------------------------
+	var container = document.querySelector('#container');
+	var childArray = container.children;
 
+	var treeSizes = [];
+	var treeColors = [];
+	for (let i = 0; i < childArray.length; i++) {
+		treeSizes.push(Number(prompt('height of tree:')));
+		treeColors.push(prompt('red, yellow, blue'));
+	}
 
+	for (let i = 0; i < childArray.length; i++) {
+		childArray[i].innerHTML = makeTree(treeSizes[i]);
+	}
+
+	for (let i = 0; i < childArray.length; i++) {
+		childArray[i].style.color = treeColors[i];		
+	}
 
 	</script>
 	

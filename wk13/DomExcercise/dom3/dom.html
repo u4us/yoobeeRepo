@@ -22,6 +22,21 @@
 
 	<script type="text/javascript">
 
+		var container = document.querySelector('#container');
+		var childArray = container.children;
+
+		for (let i = 0; i < childArray.length; i++) {
+			var input = prompt('red, yellow, blue for pane ' +childArray[i].innerHTML );
+			if(input == 'red'){
+				childArray[i].style.backgroundColor = 'red';
+			}
+			if(input == 'yellow'){
+				childArray[i].style.backgroundColor = 'yellow';
+			}
+			if(input == 'blue'){
+				childArray[i].style.backgroundColor = 'blue';
+			}
+		}
 	</script>
 	
 </body>

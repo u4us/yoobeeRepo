@@ -21,7 +21,12 @@
 	</div>
 
 	<script type="text/javascript">
+		var container = document.querySelector('#container');
+		var childArray = container.children;
 
+		for (let i = 0; i < childArray.length; i++) {
+			childArray[i].style.backgroundColor = 'red';
+		}
 	</script>
 	
 </body>
