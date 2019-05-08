@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var selection = Number(prompt('Exercise number:'));
+
+        switch(selection){
+            case 1:
+                var count = 0;
+                var output = '';
+                while(count <= 9){
+                    output = count;
+                    count++
+                    document.write(output + '<br>');
+                }
+            break;
+            
+            case 2:
+                var count = 0;
+                var output = '';
+                while(count < 20){
+                    output += '*';
+                    count++;
+                }
+                document.write(output);
+            break;
+
+            case 3:
+                var input = Number(prompt('Enter number:'));
+                var output = '';
+
+                for(var i = 0; i<input; i++){
+                    output += '*';
+                }
+                document.write(output);
+            break;
+
+            case 4:
+                var output = 0;
+                for(var i = 0; i<=20 ; i++){
+                    output += i;
+                }
+                document.write(output);
+            break;
+
+            case 5:
+                var output = 0;
+                for(var i = 1; i<=100; i++){
+                    output += (1/i); 
+                }
+                document.write(output);
+            break;
+
+            case 6:
+                var output = 0;
+                for(var i =1; i<=20; i+=2){
+                    output += i;
+                }
+                document.write(output);
+            break;
+            
+            case 7:
+                var name = prompt('name:');
+                var age = Number(prompt('age'));
+                var salary = Number(prompt('salary'));
+                
+                var output = 0;
+                for(var i = age; i<65; i++){
+                    //compunding, not total 
+                    output += salary;
+                    salary = salary * 1.05;
+                }
+                document.write(name + ' will earn about $' + output.toFixed(2));
+            break;
+
+            case 8:
+                var input = Number(prompt('workdays'));
+                
+                var option1 = 0;
+                var option2 = 0;
+                for(var i = 0; i < input; i++){
+                    option1 += 100;
+                }
+
+                // for(var i = 0; i < input; i++){
+                //     var amount = 1;
+                //     for(var j = 0; j < i; j++){
+                //         amount *= 2;
+                //     }
+                //     option2 += amount;
+                // }
+
+                var iDailyPay = 1;
+                for(var i = 0; i < input; i++){
+
+                    option2 += iDailyPay;
+                    iDailyPay = iDailyPay*2;
+            
+                }
+                
+                document.write('option 1 pays: $' + option1 + '<br>');
+                document.write('option 2 pays: $' + option2);
+            break;
+            
+            //Make a loop that outputs an asterisk * for every character in a string.
+            case 9: 
+                var str = prompt('Enter word');
+                
+                document.write(str + ' has ' + str.length + ' characters.<br>');
+                for(var i= 0; i<str.length; i++){
+                    document.write('*');
+                }
+            break;
+
+            //Make a loop that outputs every number from 1 to 100.
+            case 10:
+                var count = 1;
+                while(count <= 100){
+                    document.write(count + '<br>');
+                    count++;
+                }
+            break;
+
+            //Make a loop that outputs every even number, starting at 100, going to 0 (aka descending order).
+            case 11:
+                var count = 100;
+                while(count > 0){
+                    document.write(count + '<br>');
+                    count -= 2;
+                }
+            break;
+                
+            //fizzbuzz
+            case 12:
+                var count = 1;
+                while(count <= 100){
+                    document.write(count + ': ');
+                    if(count % 3 == 0){
+                        document.write('fizz');
+                    };
+                    if(count % 5 == 0){
+                        document.write('buzz');
+                    };
+                    document.write('<br>');
+                    count++;
+                } 
+            break;
+            
+            //99bottles of beer
+            case 13:
+                var count = 99;
+
+                document.write(count + ' bottles of beer of the wall, ' + count + ' bottles of beer.<br>');
+                while(count > 0){
+                    count--;
+                    document.write('Take one down and pass it around, ' + count );
+                    // for(var i = count){
+
+                    // };
+                }
+            break;
+        }
+    </script>
+</body>
+</html>

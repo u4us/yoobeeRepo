@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            var selection = Number(prompt('Exercise number:'));
+
+            switch(selection){
+                case 1:
+                    var cities = ['Auckland', 'Wellington', 'Christchurch', 'Dunedin'];
+
+                    document.write(cities[1] + '<br>');
+
+                    for(var i= 0; i<cities.length; i++){
+                        document.write(cities[i] + '<br>');
+                    };
+                break;
+
+                case 2:
+                    var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                    var input = Number(prompt('select day'));
+
+                    document.write('Your lucky day is ' + days[input]);
+                break;
+
+                case 3:
+                    var colours = ['red', 'blue', 'red', 'blue', 'green', 'red', 'red', 'green', 'blue', 'red'];
+                
+                    var red = 0;
+                    var green = 0;
+                    var blue = 0;
+
+                    for(var i = 0; i<colours.length; i++){
+                        if(colours[i] == 'red'){
+                            red++;
+                        };
+
+                        if(colours[i] == 'green'){
+                            green++;
+                        };
+
+                        if(colours[i] == 'blue'){
+                            blue++;
+                        };
+                    };
+
+                    document.write('Reds: ' + red + '<br>');
+                    document.write('Greens: ' + green + '<br>');
+                    document.write('Blue: ' + blue + '<br>');
+                break;
+
+                case 4:
+                    var students = Number(prompt('student number:'));
+                    var array = [];
+
+                    var coke = 0;
+                    var pepsi = 0;
+                    for(var i = 0; i<students; i++){
+                        var selection = prompt('coke or pepsi:');
+                        array[i] = selection;
+                    };
+
+                    for(var i = 0; i<array.length; i++){
+                        if(array[i] == 'coke'){
+                            coke++;
+                        };
+                        if(array[i] == 'pepsi'){
+                            pepsi++;
+                        };
+                    };
+
+                    document.write('Cokes: ' + coke + '<br>');
+                    document.write('Pepsis: ' + pepsi + '<br>');
+                break;
+
+                case 5:
+                    var students = Number(prompt('student number:'));
+                    var array = [];
+
+                    for(var i= 0; i<students; i++){
+                        array[i] = Number(prompt('enter grade (0-100):'));
+                        // array.push(Number(prompt('enter grade (0-100):')));
+                    };
+                    array.sort();
+
+                    var average = 0;
+                    for(var i= 0; i<array.length; i++){
+                        average += array[i];
+                    };
+                    average = average/array.length;
+                    
+                    // var lowest;
+                    // for(var i= 0; i<array.length; i++){
+                    //     if(lowest > array[i]){
+                    //         lowest = array[i]
+                    //     };
+                    // };
+                    document.write(array + '<br>');
+                    document.write('average: ' + average + '<br>');
+                    document.write('lowest: ' + array[0] + '<br>');
+                    document.write('highest: ' + array[array.length-1]);
+
+                break;
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var selection = Number(prompt('Exercise number:', 27));
+
+    
+
+        switch(selection){
+            //tipping
+            case 27:
+                var bill = prompt('Bill amount:');
+                var tip = bill*0.15;
+
+                if(tip < 1){
+                    tip = 1
+                };
+                document.write('Tip amount: $' + tip);
+            break;
+
+            //bagels
+            case 28:
+                var bagels = prompt('Number of bagels:');
+                var cost;
+
+                if(bagels < 6){
+                    cost = bagels*0.75;
+                } else {
+                    cost = bagels*0.6;
+                }
+                document.write('Cost: $' + cost.toFixed(2));
+            break;
+
+            //copy
+            case 30:
+                var copies = prompt('Number of copies:');
+                var cost;
+
+                if(copies <= 100){
+                    cost = copies*0.05;
+                } else{
+                    cost = 5+((copies-100)*0.03);
+                };
+                document.write('Cost: $' + cost);
+            break;
+
+            //withdrawal
+            case 33:
+                var balance = Number(prompt('Enter balance:'));
+                var amount = Number(prompt('Enter amount:'));
+
+                var result;
+                if(balance < amount){
+                    result = 'Withdrawal denied.';
+                } else if((balance-amount)>=0 && (balance-amount)<150){
+                    result = 'Balance below $150.';
+                } else{
+                    result = 'Balance is: $' + (balance - amount);
+                }
+                document.write(result);
+            break;
+
+            //numbers
+            case 34:
+                var first = Number(prompt('First:'));
+                var second = Number(prompt('Second:'));
+                var third = Number(prompt('Third:'));
+
+                var array = [first, second, third];
+                array.sort();
+
+                // for(i=0; i<array.length; i++){
+                //     for(j=i+1; j<array.length; j++){
+                //         if(array[i] > array[j]){
+                //             var temp = array[i];
+                //             array[i] = array[j];
+                //             array[j] = temp;
+                //         }
+                //     }
+                // }
+
+                result = (array[2]+array[1])/2;
+                document.write('Numbers are: ' + first + ', ' + second + ', ' + third + '<br>');
+                document.write('Average of the 2 highest numbers are: ' + result);
+            break;
+
+            //apples
+            case 35:
+                var apples = Number(prompt('pounds of apples:'));
+                var cashProvided = Number(prompt('cash provided'));
+
+                var cashRequired = apples*1.7;
+                var change = cashProvided - cashRequired;
+                var result;
+                if(change > 0){
+                    result = 'Change provided: $' + change.toFixed(2);
+                } else {
+                    result = 'Cash required: $' + (change*-1).toFixed(2);
+                }
+
+                document.write(result);
+            break;
+            
+            //wages
+            case 36:
+                var hours = Number(prompt('Hours worked:'));
+                var salary = Number(prompt('Salary:'));
+                    
+                var result;
+                if(hours >0 && hours <= 40){
+                    result = 'Wages paid: $' + (hours*salary);
+                } else if(hours > 40){
+                    result = 'wages paid: $' + ((40*salary)+ (salary*1.5*(hours-40)));
+                } else {
+                    result = 'derp';
+                }
+                document.write(result);
+            break;
+
+            //translation
+            case 37:
+                // var vowels = ['a','e','i','o','u']
+                var vowelList = 'aeiou';
+                var consonantList = 'bcdfghjklmnpqrstvwxyz'
+                var str = prompt('A word:').toLowerCase();
+
+                var arrayStr = [];
+                for(var i = 0; i < str.length; i++){
+                    arrayStr[i] = str.charAt(i);
+                }
+                
+                if(consonantList.indexOf(arrayStr[0]) !== -1){
+                    // var temp = arrayStr[0];
+                    arrayStr.push(arrayStr[0]);
+                    arrayStr.push('ay');
+                    arrayStr.shift();
+                } else {
+                    arrayStr.push('way');
+                }
+                
+                var output = '';
+                for(var i = 0; i<arrayStr.length; i++){
+                    output += arrayStr[i]
+                }
+                document.write(output);
+                // vowels.find(function(vowel){return vowel == str[i]});
+
+            break;
+        };
+    </script>
+</body>
+</html>

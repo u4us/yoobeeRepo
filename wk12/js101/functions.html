@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body{
+            color: red;
+        }
+
+        boxes{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var selection = Number(prompt('Exercise number:'));
+
+        switch(selection){
+            //ideal age
+            case 1: 
+                function calculateIdeal(manAge){                    
+                    return (manAge/2)+7;
+                };
+
+                var manAge = Number(prompt('man\'s age:'));
+                var womanAge = Number(prompt('woman\'s age:'));
+                
+                document.write('man age: ' + manAge + '<br>');
+                document.write('woman age: ' + womanAge + '<br>');
+                document.write('ideal age: ' + calculateIdeal(manAge) + '<br>');
+
+                if(womanAge < calculateIdeal(manAge)){
+                    document.write('woman age is below ideal');
+                };
+
+                if(womanAge > calculateIdeal(manAge)){
+                    document.write('woman age is above ideal');
+                };
+
+                if(womanAge == calculateIdeal(manAge)){
+                    document.write('woman age is ideal');
+                };
+            break;
+            
+            //bmi
+            case 2: 
+                function calculateBmi (w, h){
+                    return w/(h^2);
+                };
+                
+                var weight = Number(prompt('weight:'));
+                var height = Number(prompt('height:'));
+
+                document.write('weight: ' + weight + '<br>');
+                document.write('height: ' + height + '<br>');
+                document.write('bmi: ' + calculateBmi(weight, height) + '<br>');
+
+                if(calculateBmi(weight, height) > 25.0){
+                    document.write('overweight');
+                };
+                if(calculateBmi(weight, height) >= 18.5 && calculateBmi(weight, height) <= 25.0){
+                    document.write('healthy weight');
+                };
+                if(calculateBmi(weight, height) < 16.0){
+                    document.write('underweight');
+                };
+            break;
+
+            //stars
+            case 3.1: 
+                function makeStars(num){
+                    var stars = '';
+                    for (let i = 0; i < num; i++) {
+                        stars += '*';
+                    }
+                    return stars;
+                };
+
+                var input = Number(prompt('how many stars?: '));
+                
+                document.write(makeStars(input));
+            break;
+            
+            //more stars
+            case 3.2:
+                function makeMoreStars(w, h){
+                    var temp = '';
+                    for (let i = 0; i < h; i++) {
+                        for (let j = 0; j < w; j++) {
+                            temp += '*'
+                        }
+                        temp += '<br>'
+                    }
+                    return temp;
+                };
+
+                var width = Number(prompt('width: '));
+                var height = Number(prompt('height: '));
+                
+                document.write(makeMoreStars(width, height));
+            break;
+                
+            //make tree
+            case 3.3:
+                function makeTree(h){
+                    var temp = '';
+                    var spaces = h - 1;
+                    var leaves = 1;
+                    for (let i = 0; i < h; i++) {
+                        for (let j = 0; j < spaces; j++) {
+                            temp += '&nbsp;';
+                        }
+                        spaces--;
+
+                        for (let k = 0; k < leaves; k++) {
+                            temp += '*';
+                        }
+                        leaves++;
+
+                        temp += '<br>';
+                    }
+
+                    for (let l = 0; l < h; l++) {
+                        temp += '&nbsp;';            
+                    }
+                    temp += '*';
+
+                    return temp;
+                };
+                
+                var height = Number(prompt('height: '));
+                
+                document.write(makeTree(height));
+            break;
+
+            //make triangle
+            case 3.4:
+                function makeTriangle(h){
+                    var temp = '';
+                    var stars = h;
+                    for (let i = 0; i < h; i++) {
+                        for (let j = 0; j < stars; j++) {
+                            temp += '*';
+                        };
+                        stars--;
+                        temp += '<br>';
+                    }
+                    return temp;
+                };
+
+                document.write(makeTriangle(parseInt(prompt('height: '))));
+            break;
+
+            //2D array
+            case 4:
+                function findHighest(numbers){
+                    var temp = 0;
+                    for (let i = 0; i < numbers.length; i++) {
+                        for (let j = 0; j < numbers[i].length; j++) {
+                            if(numbers[i][j]> temp){
+                                temp = numbers[i][j];
+                            };
+                        }
+                    }
+                    return temp;
+                };
+
+                var grades = [[],[]];
+                var classSize = Number(prompt('Class size:'));
+                for (let i = 0; i < classSize; i++) {
+                    grades[i][0] = Number(prompt('math grade(0-100): '));
+                    grades[i][1] = Number(prompt('english grade(0-100): '));
+                };
+
+                var averageStudentGrade = [];
+                for (let i = 0; i < classSize; i++) {
+                    averageStudentGrade.push((grades[i][0] + grades[i][1])/2);
+                }
+                
+                for (let i = 0; i < grades.length; i++) {
+                    document.write(grades[i] + '<br>');
+                }
+                for (let i = 0; i < averageStudentGrade.length; i++) {
+                    document.write(averageStudentGrade[i] + '<br>');
+                }
+
+                document.write(findHighest(grades));
+            break;
+
+            case 5:
+                var content= '<div class=\"boxes\" ></div>';
+                
+
+                for (let i = 0; i < 5; i++) {
+                    document.write(content + '<br>');                    
+                }
+            break;
+        }
+    </script>
+</body>
+</html>
