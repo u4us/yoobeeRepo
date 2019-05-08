@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://127.0.0.1:5500/loop.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var selection = Number(prompt('Exercise number:'));
+
+        switch(selection){
+            case 1:
+                var count = 0;
+                var output = '';
+                while(count <= 9){
+                    output = count;
+                    count++
+                    document.write(output + '<br>');
+                }
+            break;
+            
+            case 2:
+                var count = 0;
+                var output = '';
+                while(count < 20){
+                    output += '*';
+                    count++;
+                }
+                document.write(output);
+            break;
+
+            case 3:
+                var input = Number(prompt('Enter number:'));
+                var output = '';
+
+                for(var i = 0; i<input; i++){
+                    output += '*';
+                }
+                document.write(output);
+            break;
+
+            case 4:
+                var output = 0;
+                for(var i = 0; i<=20 ; i++){
+                    output += i;
+                }
+                document.write(output);
+            break;
+
+            case 5:
+                var output = 0;
+                for(var i = 1; i<=100; i++){
+                    output += (1/i); 
+                }
+                document.write(output);
+            break;
+
+            case 6:
+                var output = 0;
+                for(var i =1; i<=20; i+=2){
+                    output += i;
+                }
+                document.write(output);
+            break;
+            
+            case 7:
+                var name = prompt('name:');
+                var age = Number(prompt('age'));
+                var salary = Number(prompt('salary'));
+                
+                var output = 0;
+                for(var i = age; i<65; i++){
+                    //compunding, not total 
+                    output += salary;
+                    salary = salary * 1.05;
+                }
+                document.write(name + ' will earn about $' + output.toFixed(2));
+            break;
+
+            case 8:
+                var input = Number(prompt('workdays'));
+                
+                var option1 = 0;
+                var option2 = 0;
+                for(var i = 0; i < input; i++){
+                    option1 += 100;
+                }
+
+                for(var i = 0; i < input; i++){
+
+                    if(i < 1){
+                        option2 += 1;
+                    } else{
+                        option2 += (input*2);
+                    }
+                    
+                }
+                
+                document.write('option 1 pays: $' + option1 + '<br>');
+                document.write('option 2 pays: $' + option2);
+            break;
+        }
+    </script>option 1 pays: $100<br>option 2 pays: $1
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>

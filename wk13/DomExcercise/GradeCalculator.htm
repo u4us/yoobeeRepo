@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//function: find max value of a number list
+	function findMax(aNums) {
+		var iMax = aNums[0];
+
+		for(var iCount=0; iCount<aNums.length; iCount++) {
+			//less than,not greater
+			if(iMax < aNums[iCount]) { 
+				iMax = aNums[iCount];
+			}
+		}
+
+		return iMax;
+	}
+
+	//-----------------------------------------
+
+	//Input: Get 3 grades for each student
+	var sSize = prompt('Class size?')
+	var iSize = parseInt(sSize);
+	var aGradesPhysics = [];
+	var aGradesChemistry = [];
+	var aGradesBiology = [];
+
+	for(var iCount=0; iCount<iSize; iCount++) {
+		var iGradePhysics = parseInt(prompt('Student '+(iCount+1)+': Grade for Physics out of 100'));
+		aGradesPhysics.push(iGradePhysics);
+
+		var iGradeChemistry = parseInt(prompt('Student '+(iCount+1)+': Grade for Biology out of 100')); 
+		aGradesChemistry.push(iGradeChemistry);
+
+		var iGradeBiology = parseInt(prompt('Student '+(iCount+1)+': Grade for Chemistry out of 100')); 
+		aGradesBiology.push(iGradeBiology);
+	}
+	
+	// processing: calculate average grade for each student and find top grade in class
+	var aAverageGrades = [];
+
+	for(var iCount=0; iCount<iSize; iCount++) {
+		//average is 3, not 2
+		var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount]) / 3;
+		aAverageGrades.push(fAverage);
+	}
+
+	var iTopGrade = findMax(aAverageGrades);
+
+
+
+	//output: list result for each student and top grade
+		//iCount is 0, not 1
+	for(var iCount=0; iCount<aAverageGrades.length; iCount++) {
+		if(aAverageGrades[iCount] < 50) {
+
+			document.write('Student '+(iCount+1)+': Fail'+'<br>');
+
+		}
+		//>=50
+		if(aAverageGrades[iCount] >= 50 && aAverageGrades[iCount] < 80) { 
+
+			document.write('Student '+(iCount+1)+': Pass'+'<br>');
+
+		}
+		//>=80
+		if(aAverageGrades[iCount] >= 80){
+
+			document.write('Student '+(iCount+1)+': Pass with Distinction'+'<br>');
+		}
+	}
+
+	document.write('<h1>The top overall grade is '+iTopGrade+'</h1>');
+
+	</script>
+	
+</body>
+</html>
