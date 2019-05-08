@@ -29,9 +29,37 @@
 	</div>
 
 	<script type="text/javascript">
-	
-		
-	
+
+		var colors = [];
+		var outer = document.querySelector('#middle').parentNode.parentNode;
+		var current = outer;
+		for (let i = 0; i < 5; i++) {
+			colors.push(prompt('set colors for ' + i + '(red, orange, yellow, green, blue, indigo)'));
+			switch(colors[i]){
+				case 'red':
+					colors[i] = 'redBackground';
+				break;
+				case 'orange':
+					colors[i] = 'orangeBackground';
+				break;
+				case 'yellow':
+					colors[i] = 'yellowBackground';
+				break;
+				case 'green':
+					colors[i] = 'greenBackground';
+				break;
+				case 'blue':
+					colors[i] = 'blueBackground';
+				break;
+				case 'indigo':
+					colors[i] = 'indigoBackground';
+				break;
+			}
+			current.className = colors[i];
+			current = current.children[0];
+		}
+
+
 	</script>
 	
 </body>

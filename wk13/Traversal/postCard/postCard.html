@@ -47,7 +47,32 @@
 	}
 	//---------------------------------------------
 	
+	var container = document.querySelector('#container');
 		
+	var greeting = prompt('greeting text: ');
+	container.children[0].innerHTML = greeting;
+
+	var cardColor = prompt('card background (red, white): ');
+	switch(cardColor){
+		case 'red':
+			container.className = 'redBackground';
+		break;
+		case 'white':
+			container.className = 'whiteBackground';
+		break;
+	};
+
+	var photoColor = prompt('photo background (red, white): ');
+	switch(photoColor){
+		case 'red':
+			container.children[1].className = 'redBackground';
+		break;
+		case 'white':
+			container.children[1].className = 'whiteBackground';
+		break;
+	};
+
+	container.children[1].innerHTML = makeTree(Number(prompt('tree size: ')));
 	
 	</script>
 	
