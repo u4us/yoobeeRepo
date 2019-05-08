@@ -29,21 +29,17 @@
 			sStars += "*";
 		}
 		return sStars;//string of stars
-	}
-	//---------------------------------------------
+		}
+		//---------------------------------------------
 
-	var container = document.querySelector('#container');
-	var childArray = container.children;
-	
-	var listOfStars = [];
-	for (let i = 0; i < childArray.length; i++) {
-		listOfStars.push(Number(prompt('no. of stars')));
-	}
-
-	for (let i = 0; i < childArray.length; i++) {
-		childArray[i].innerHTML = makeStars(listOfStars[i]);
-	}
-
+		var container = document.querySelector('#container');
+		var childArray = container.children;
+		
+		var listOfStars = [];
+		for (let i = 0; i < childArray.length; i++) {
+			listOfStars.push(Number(prompt('no. of stars')));
+			childArray[i].innerHTML = makeStars(listOfStars[i]);
+		}
 	</script>
 	
 </body>
