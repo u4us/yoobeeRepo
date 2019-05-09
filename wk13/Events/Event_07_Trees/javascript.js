@@ -18,3 +18,15 @@ function makeTree(iHeight){
 
 
 //---------------------------------------------
+
+
+function drawTree(){
+	var box = document.querySelector('#box');
+	var treeColor = document.querySelector('#color');
+	document.getElementById(box.value).innerHTML = makeTree(treeSize.value);
+	document.getElementById(box.value).style.color = treeColor.value;
+};
+
+var treeSize = document.querySelector('#treeSize');
+var draw = document.querySelector('#draw');
+draw.addEventListener('click', drawTree);

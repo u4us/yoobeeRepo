@@ -7,3 +7,12 @@ function makeStars(iNum){
 }
 
 //---------------------------------------------
+
+
+function drawStars(){
+	var box = document.querySelector('#box');
+	document.getElementById(box.value).innerHTML = makeStars(Number(stars.value));
+}
+var stars = document.querySelector('#stars');
+var draw = document.querySelector('#draw');
+draw.addEventListener('click', drawStars);
