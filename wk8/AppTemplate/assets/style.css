@@ -1,0 +1,71 @@
+*{
+	margin:0;	
+}
+/*All devices and mobile phone*/
+
+.app{
+
+
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+header,footer{
+
+	display: flex;
+	justify-content: space-between;
+	padding:1em;
+	align-items: center;
+	background-image: linear-gradient(#eee,#ccc);
+}
+
+i{
+	font-size: 1.5em;
+
+}
+
+main{
+
+
+	flex: 1 1 auto;
+	overflow-y: auto;
+}
+
+.index{
+
+}
+
+.products main{
+	display: flex;
+	flex-wrap:wrap;
+}
+
+.products main .product{
+	flex: 1 0 40%;
+	padding:1em;
+}
+/*for small tablet - inclusive*/
+@media only screen and (min-width : 40em) {	
+	
+	.app{
+		max-width: 40em;
+		margin:auto;
+	}
+
+}
+
+/*for tablet - inclusive*/
+@media only screen and (min-width : 60em) {
+
+}
+
+/*for destop - inclusive*/
+@media only screen and (min-width : 80em) {	
+
+}
+
+
+
+
+

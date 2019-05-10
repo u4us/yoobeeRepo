@@ -1,0 +1,132 @@
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors*/
+
+/*Tag*/
+p{
+	color: red;
+}
+
+/*Class*/
+.section{
+	border: 1px solid red;
+	min-height: 10em;
+}
+
+/*Combination*/
+a.active{
+	background-color: green;
+}
+/*section that is active*/
+section.active{
+	background-color: olive;
+}
+
+/*ID*/
+#section2{
+	color: lavender;
+}
+
+/*Attribute*/
+[type=text]{
+	background-color: yellow;
+}
+
+/*Decendant*/
+/*any ul within the decendent*/
+.section ul{
+	border: 1px blue solid;
+}
+
+/*Child*/
+.container>ul{
+	border: 1px solid green;
+}
+
+/*Universal*/
+*{}
+
+/*Adjacent sibling*/
+label+input{
+	border: 1px red solid;
+}
+
+/*Pseudo-classes
+	:first-child
+	:link
+	:visited
+	:hover
+	:active
+	:focus
+	:focus-within*/
+[type=text]:focus{
+	border: 2px green solid;
+	outline: none;
+}
+
+/*Pseudo-elements
+	:first-line
+	:first-letter
+	:before 
+	:after */
+/*p:first-line{
+	text-transform: uppercase;;
+}
+
+p:first-letter{
+	font-size: 2em;
+}*/
+
+p:before{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 3em;
+	color: rgba(255,0,0,0.2);
+	content: "\f10d";
+	border: 1px blue solid;
+}
+
+p:after{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 3em;
+	color: rgba(255,0,0,0.2);
+	content: "\f10e";
+	border: 1px blue solid;
+}
+
+[type=radio]+span:before{
+	content: "";
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-color: #ccc;
+	margin-right: 1em;
+}
+
+[type=radio]:checked+span:before{
+	background-color: coral;
+}
+
+[type=radio]{
+	display: none;
+}
+
+/*Not :not()*/
+.nav>li>a:not(.active){
+	font-weight: bold;
+	color: green;
+	text-decoration: none;
+}
+
+/*nth selectors
+	:nth-child($n+start)
+
+	:nth-of-type()*/
+.wrap>.section:nth-child(2n+2){
+	background-color: rgba(0,0,255,0.4);
+}
+
+p:nth-of-type(2n+1){
+	color: green;
+}
+
+/*Specificity*/
