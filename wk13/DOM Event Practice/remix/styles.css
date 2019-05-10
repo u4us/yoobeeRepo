@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+}
+
+.boxes{
+    margin: 1em;
+    border: 1px solid;
+    height: 200px;
+    width: 200px;
+    background-color: green;
+    text-align: center;
+}
+
+.redBackground{
+    background-color: red;
+}
+
+.yellowBackground{
+    background-color: yellow;
+}
+
+.blueBackground{
+    background-color: blue;
+}
