@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.container{
+    background-color: #ccc;
+    width: 800px;
+    margin: auto;
+    display: flex;
+}
+
+.card{
+    flex: 1 0 40%;
+    border: 1px solid;
+    margin: 1em;
+    padding: 1em;
+    background-color: white;
+
+    display: flex;
+}
+
+.logo{
+    flex: 0 0 30%;
+}
+
+
+
+.settings{
+    flex: 1 0 40%;
+    border: 1px solid;
+    margin: 1em;
+    padding: 1em;
+    background-color: white;
+}
