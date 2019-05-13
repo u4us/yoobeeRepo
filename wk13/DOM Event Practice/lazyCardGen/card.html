@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great|Sigmar+One|Pacifico' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="settings">
+            <strong>Customise your card</strong> <br><br>
+            Choose image <br>
+            <select name="" id="background-image">
+                <option value="url('assets/birthday.jpg')">birthday</option>
+                <option value="url('assets/christmas.jpg')">christmas</option>
+                <option value="url('assets/valentines.jpg')">valentines</option>
+            </select> <br>
+            Choose background colour <br>
+            <select name="" id="background-colour">
+                    <!-- <option value="coral">coral</option>
+                    <option value="#9dcc78">celadon</option>
+                    <option value="#aaa">graphite</option> -->
+                    <option value="coralBackground">coral</option>
+                    <option value="celadonBackground">celadon</option>
+                    <option value="graphiteBackground">graphite</option>
+                </select> <br>
+            Choose font <br>
+            <select name="" id="font-family">
+                    <option value="Pacifico">pacifico</option>
+                    <option value="Sigmar One">sigma one</option>
+                    <option value="Fredericka the Great">fredericka the great</option>
+                </select> <br>
+            Choose border <br>
+            <select name="" id="">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select> <br>
+            Specify your message <br>
+            <textarea name="" id="text" cols="30" rows="10" placeholder="Greeting"></textarea> <br>
+            <input type="submit" id="submit">            
+        </div>
+        <div class="card">
+            <div class="card-left">
+                <div class="card-left-inner">
+                    <div class="card-left-front">
+                        <!-- <img src="https://via.placeholder.com/200x300" alt=""> -->
+                    </div>
+                    <div class="card-left-back" data-color="coralBackground" data-border="smallBorder" >
+                        <p>Greeting</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="card-right"></div> -->
+        </div>
+    </div>
+    <script type="text/javascript" src="card.js"></script>
+</body>
+</html>

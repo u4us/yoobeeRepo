@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.container{
+    display: flex;
+}
+
+.settings{
+    flex: 0 0 40%;
+    background: #ccc;
+    padding: 1em;
+    text-align: center;
+}
+
+.card{
+    position: relative;
+    flex: 1 0 40%;
+    /* border: 1px solid; */
+}
+
+.card-left{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* z-index: 10; */
+
+    height: 300px;
+    width: 200px;
+    margin: auto;
+    background-color: transparent;
+    perspective: 1000px;
+}
+
+.card-left-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card-left:hover .card-left-inner{
+    transform: rotateY(180deg);
+}
+
+.card-left-front, .card-left-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-left-front{
+    background-image: url('assets/birthday.jpg');
+    background-size: cover;
+}
+
+.card-left-back{
+    transform: rotateY(180deg);
+    /* background-color: coral; */
+
+    text-align: center;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+/* .card-right{
+    position: absolute;
+
+    height: 300px;
+    width: 200px;
+    margin: auto;
+    background-color: salmon;
+} */
+
+/* .coralBackground{
+    background-color: coral;
+}
+
+.celadonBackground{
+    background-color: #9dcc78;
+}
+
+.graphiteBackground{
+    background-color: #aaa;
+} */
+
+[data-color=coralBackground]{
+    background-color: coral;
+}
+
+[data-color=celadonBackground]{
+    background-color: #9dcc78;
+}
+
+[data-color=graphiteBackground]{
+    background-color: #aaa;
+}
+
+[data-color=smallBorder]{
+    border: 1em solid transparent;
+    border-image: url('assets/border.png') 33.33% round;
+}
