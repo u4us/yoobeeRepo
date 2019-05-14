@@ -1,0 +1,39 @@
+.image-slider{
+    width: 100vw;
+    height: 18.75vw;
+    position: relative;
+    border: 1px solid red;
+    box-sizing: border-box;
+
+    display: flex;
+}
+
+.slides-left{
+    position: relative;
+    flex: 1 0 40%;
+}
+
+.slides-left>img{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.slides-right{
+    flex: 1 0 40%;
+    border: 1px solid red;
+    position: relative;
+}
+
+.slides-right i{
+    position: absolute;
+    top: 50%;
+    z-index: 100;
+    transform: translate(0,-50%);
+    font-size: 3vw;
+}
+
+.slides-right .fa-chevron-circle-left{
+    
+}

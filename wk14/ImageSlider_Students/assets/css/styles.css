@@ -1,0 +1,58 @@
+.image-slider{
+    width: 100vw;
+    height: 37.5vw;
+    box-sizing: border-box;
+
+    position: relative;
+    
+}
+/* 740x277 == 277/740 == 37.5 */
+/* or vw */
+/* container relative, imgs absolute */
+/* img slider relative, chevrons absolute */
+
+.image-slider i {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.5);
+    top: 50%;
+
+    z-index: 100;
+    transform: translate(0,-50%);
+
+    font-size: 5vw;
+    transition: all ease 1s;
+}
+
+.image-slider i:hover{
+    color: white;
+}
+
+.image-slider .fa-chevron-circle-left{
+    left: 0.5em;
+}
+
+.image-slider .fa-chevron-circle-right{
+    right: 0.5em;
+}
+
+.slides{
+    position: relative;
+}
+
+.slides>img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all ease 1s; 
+    /* z-index is not transitionable,  */
+    opacity: 0;
+    /* opacity does not remove them, they still exist on top of others */
+    pointer-events: none;
+}
+
+.slides>.current{
+    /* z-index: 50; */
+
+    opacity: 1;
+}
