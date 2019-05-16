@@ -1,0 +1,88 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+}
+
+/* sidebar */
+
+.sidebar{
+    border: 1px solid red;
+    flex: 0 0 25%;
+    height: 100vh;
+
+    /* position: fixed;
+    top: 0; */
+    position: relative;
+    z-index: 11;
+}
+
+.sidebar>div{
+    border: 1px solid blue;
+    line-height: 2em;
+
+    padding: 0.5em;
+    transition: all ease 1s;
+}
+
+.sidebar>.current-item{
+    opacity: 0;
+    transform: translateX(25vw);
+    pointer-events: none;
+}
+
+/* slides */
+
+.slides{
+    border: 1px solid red;
+    flex: 1 0 40%;
+
+    position: relative;
+}
+
+.slides>div{
+    border: 1px solid blue;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 1em;
+
+    position: absolute;
+
+    background-color: white;
+    transition: all ease 1s;
+    opacity: 0;
+
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+    /* add styling for fade in individual characters */
+}
+
+.slides>div>h1 p{
+    padding-bottom: 0.5em;
+    
+}
+
+.slides>.current{
+    z-index: 10;
+    opacity: 1;
+}
+
+/* animation */
+
+.transition-fast{
+    transition: all ease 1s;
+}
+
+.slide-in{
+    opacity: 1;
+}
+
+.current .slide-in{
+    opacity: 0;
+    transform: translateY(100%);
+}
