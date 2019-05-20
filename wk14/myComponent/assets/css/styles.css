@@ -4,14 +4,21 @@
     padding: 0;
 }
 
+body{
+    overflow: hidden;
+    font-weight: bold;
+}
+
 .container{
     display: flex;
+    max-width: 950px;
+    margin: auto;
 }
 
 /* sidebar */
 
 .sidebar{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     flex: 0 0 25%;
     height: 100vh;
 
@@ -19,14 +26,25 @@
     top: 0; */
     position: relative;
     z-index: 11;
+
+}
+
+.sidebar>div:nth-child(1){
+    box-shadow: none;
 }
 
 .sidebar>div{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     line-height: 2em;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
 
+
+    text-align: center;
     padding: 0.5em;
+    margin-top: 1em;
     transition: all ease 1s;
+    z-index: 11;
+    background-color: white;
 }
 
 .sidebar>.current-item{
@@ -38,44 +56,172 @@
 /* slides */
 
 .slides{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     flex: 1 0 40%;
 
     position: relative;
+    
 }
 
 .slides>div{
-    border: 1px solid blue;
-    height: 100vh;
+    /* border: 1px solid blue; */
+    /* height: 100vh; */
     box-sizing: border-box;
-    padding: 1em;
+    margin: 5em;
+    /* padding: 1em; */
 
     position: absolute;
 
-    background-color: white;
-    transition: all ease 1s;
+    /* background-color: white; */
+    transition: opacity ease 1s;
     opacity: 0;
+
+    box-sizing: border-box;
 
     writing-mode: vertical-rl;
     text-orientation: upright;
-
-    /* add styling for fade in individual characters */
 }
 
-.slides>div>h1 p{
+.slides>div>h1{
+    padding-left: 0.5em;
+}
+
+.slides>div>p{
     padding-bottom: 0.5em;
-    
 }
 
 .slides>.current{
     z-index: 10;
     opacity: 1;
+
+    display: inline-block;
+    overflow: hidden;
+    animation: example 3s linear 0s alternate;
+}
+
+@keyframes example {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100vw;
+    }
+}
+
+
+.triangles>.current-triangle{
+    opacity: 1;
+}
+
+.triangle{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-color: transparent black;
+	border-style: solid;
+	border-width: 25vw 25vw 0vw 0vw;
+    z-index: 6;
+    transition: all ease 1s;
+    opacity: 1;
+}
+
+.triangle.action1{
+	transform: rotate(90deg);
+}
+.triangle.action2{
+	transform: rotate(180deg);
+}
+.triangle.action3{
+	transform: rotate(270deg);
+}
+.triangle.action4{
+	transform: rotate(360deg);
+}
+
+.triangle1{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-color: transparent red;
+	border-style: solid;
+	border-width: 50vw 50vw 0vw 0vw;
+    z-index: 5;
+    transition: all ease 1s;
+    
+    opacity: 0;
+}
+
+.triangle1.current-triangle{
+    transform: rotate(90deg);
+}
+
+/* .triangle1::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-color: transparent red;
+	border-style: solid;
+	border-width: 0vw 0vw 50vw 50vw;
+    z-index: 5;
+    transition: all ease 1s;
+    transform: rotate(90deg);
+} */
+
+.triangle2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-color: transparent red;
+	border-style: solid;
+	border-width: 50vw 0vw 0vw 50vw;
+    z-index: 5;
+    transition: all ease 1s;
+    /* transform: rotate(90deg); */
+    opacity: 0;
+}
+
+.triangle2.current-triangle{
+    transform: rotate(90deg);
+}
+
+.triangle3{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-color: transparent red;
+	border-style: solid;
+	border-width: 0vw 0vw 50vw 50vw;
+    z-index: 5;
+    transition: all ease 1s;
+    /* transform: rotate(90deg); */
+    opacity: 0;
+}
+.triangle3.current-triangle{
+    transform: rotate(90deg);
+}
+
+.triangle4{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-color: transparent red;
+	border-style: solid;
+	border-width: 0vw 50vw 50vw 0vw;
+    z-index: 5;
+    transition: all ease 1s;
+    /* transform: rotate(90deg); */
+    opacity: 0;
+    box-sizing: border-box;
+}
+.triangle4.current-triangle{
+    transform: rotate(90deg);
 }
 
 /* animation */
 
 .transition-fast{
-    transition: all ease 1s;
+    transition: transform ease 1s;
 }
 
 .slide-in{
