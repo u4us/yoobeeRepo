@@ -13,7 +13,7 @@ function show(){
     var targetTriangle = document.querySelector(this.dataset.triangle);
     targetTriangle.classList.add('current-triangle');
     //action
-    var aTriangle = document.querySelector('.triangles').children[0];
+    var aTriangle = document.querySelector('.triangle');
     aTriangle.className = 'triangle';
 
     var targetAction = document.querySelector(this.dataset.action);

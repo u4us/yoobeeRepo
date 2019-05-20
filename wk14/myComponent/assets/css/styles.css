@@ -155,19 +155,6 @@ body{
     transform: rotate(90deg);
 }
 
-/* .triangle1::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    border-color: transparent red;
-	border-style: solid;
-	border-width: 0vw 0vw 50vw 50vw;
-    z-index: 5;
-    transition: all ease 1s;
-    transform: rotate(90deg);
-} */
-
 .triangle2{
     position: absolute;
     top: 0;
