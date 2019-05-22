@@ -1,0 +1,56 @@
+.container{
+    border: 1px solid red;
+    width: 300px;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card-container{
+    border: 1px solid blue;
+    position: relative;
+}
+
+.card-container i{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 5vw;
+}
+
+.card-container .fa-chevron-left{
+    left: 0.5em;
+}
+
+.card-container .fa-chevron-right{
+    right: 0.5em
+}
+
+.cards{
+    position: relative;
+    padding: 1em;
+}
+
+.card{
+
+}
+
+
+.nav-bar{
+    border: 1px solid blue;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.card{
+    border: thin solid;
+    width: 200px;
+    height: 100px;
+}
+
+.form-container{
+    border: 1px solid blue;
+    padding: 1em;
+    position: relative;
+    display: flex;
+}
+

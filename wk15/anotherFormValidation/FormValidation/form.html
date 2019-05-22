@@ -3,40 +3,91 @@
 <head>
 	<meta charset="UTF-8">
 	
-	<link rel="stylesheet" href="pure.css">
+	<!-- <link rel="stylesheet" href="pure.css"> -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
 	<link rel="stylesheet" href="styles.css">
 	<title>Document</title>
 </head>
 <body>
+	<div class="container">
+		<div class="nav-bar">Payment</div>
+		<div class="card-container">
 
-	<form action="" method="post" class="pure-form pure-form-aligned">
-		<h1>Sign-up form</h1>
-	
-		<div class="pure-control-group">		
-		    <label>First name</label>
-		    <input type="text" name="firstName" id="firstName"/>
-		    <span id="firstNameMessage"></span>
+			<div class="cards">
+				<div class="card visa-card">
+					<div class="displayCreditNumber">**** **** **** 1234</div>
+					<div class="displayName">John Smith</div>
+					<div class="displayExpiry">05/19</div>
+				</div>
+				<div class="card master-card">
+					<div class="displayCreditNumber">**** **** **** 1234</div>
+					<div class="displayName">John Smith</div>
+					<div class="displayExpiry">05/19</div>
+				</div>
+			</div>
+			<i class="fas fa-chevron-left"></i>
+			<i class="fas fa-chevron-right"></i>
 		</div>
-		<div class="pure-control-group">	
-		    <label>Last name</label>
-		    <input type="text" name="lastName" id="lastName"/>
-		    <span id="lastNameMessage"></span>
-		</div>
-		<div class="pure-control-group">	    
-		    <label>Email</label>
-		    <input type="text" name="email" id="email"/>
-		    <span id="emailMessage"></span>
-		</div>
-		<div class="pure-control-group">
-		    <label>Password</label>
-		    <input type="text" name="password" id="password"/>
-		    <span id="passwordMessage"></span>
-		</div>    
-		<div class="pure-controls">
-	    	<input name="submit" id="submit" type="submit" value="Submit" class="pure-button pure-button-primary" />
-	    </div>	
+		<div class="form-container">
+			<form action="" method="POST">
+				<div>
+					<label for="creditNumber">Card Number</label>
+					<input type="text" name="creditNumber" id="credit" placeholder="1234 5678 9012 3456">
+				</div>
+				<div>
+					<label for="name">Cardholder's name</label>
+					<input type="text" name="name" id="name" placeholder="John Smith">
+				</div>
+				<div>
+					<select name="expiry" id="expiry">
+						<option value="05/19">05/19</option>
+						<option value="06/19">06/19</option>
+						<option value="07/19">07/19</option>
+						<option value="08/19">08/19</option>
+						<option value="09/19">09/19</option>
+					</select>
+				</div>
+				<div>
+					<input type="cvv" placeholder="CVV">
+				</div>
+				<div>
+					<input type="submit" id="submit">
+				</div>
 
-	</form>
+				<!-- <i class="far fa-check-circle"></i> -->
+			</form>
+
+			<!-- <form action="" method="post" class="pure-form pure-form-aligned">
+				<div class="pure-control-group">		
+					<label>First name</label>
+					<input type="text" name="firstName" id="firstName"/>
+					<span id="firstNameMessage"></span>
+				</div>
+				<div class="pure-control-group">	
+					<label>Last name</label>
+					<input type="text" name="lastName" id="lastName"/>
+					<span id="lastNameMessage"></span>
+				</div>
+				<div class="pure-control-group">	    
+					<label>Email</label>
+					<input type="text" name="email" id="email"/>
+					<span id="emailMessage"></span>
+				</div>
+				<div class="pure-control-group">
+					<label>Password</label>
+					<input type="text" name="password" id="password"/>
+					<span id="passwordMessage"></span>
+				</div>    
+				<div class="pure-controls">
+					<input name="submit" id="submit" type="submit" value="Submit" class="pure-button pure-button-primary" />
+				</div>	
+			</form> -->
+		</div>
+	</div>
 
 	<script type="text/javascript" src="javascript.js"></script>
 	
