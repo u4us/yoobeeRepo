@@ -1,13 +1,98 @@
 
+function moveNext(){
+    var current = document.querySelector('.current');
+    current.classList.remove('current');
+    if(current.nextElementSibling != null){
+        current.nextElementSibling.classList.add('current');
+    } else{
+        current.parentNode.firstElementChild.classList.add('current');
+    }
+    
+};
+
+function movePrev(){
+    var current = document.querySelector('.current');
+    current.classList.remove('current');
+    if(current.previousElementSibling != null){
+        current.previousElementSibling.classList.add('current');
+    } else{
+        current.parentNode.lastElementChild.classList.add('current');
+    }
+};
+
+document.querySelector('.fa-chevron-right').addEventListener('click', moveNext);
+document.querySelector('.fa-chevron-left').addEventListener('click', movePrev);
 
 
+//on keydown, update card display
 
 
+function updateNumber(){
+    var temp = document.querySelectorAll('.displayCreditNumber');
+    for (let i = 0; i < temp.length; i++) {
+        temp[i].innerHTML = this.value;
+    }
+}
+
+document.querySelector('#credit').addEventListener('keyup', updateNumber);
 
 
+function updateName(){
+    var temp = document.querySelectorAll('.displayName');
+    for (let i = 0; i < temp.length; i++) {
+        temp[i].innerHTML = this.value;
+    }
+}
 
+document.querySelector('#name').addEventListener('keyup', updateName);
 
+function updateExpiry(){
+    var temp = document.querySelectorAll('.displayExpiry');
+    for (let i = 0; i < temp.length; i++) {
+        temp[i].innerHTML = this.value;
+    }
+}
 
+document.querySelector('#expiry').addEventListener('change', updateExpiry);
+
+function updateCvv(){
+    var temp = document.querySelectorAll('.displayCvv');
+    for (let i = 0; i < temp.length; i++) {
+        temp[i].innerHTML = this.value;
+    }
+}
+
+document.querySelector('#cvv').addEventListener('keyup', updateCvv);
+
+//on blur, validate
+
+function checkNumeric(){
+
+    var isValid = false;
+
+    var sValue = this.value;
+    if(sValue == ''){
+        this.nextElementSibling.innerHTML = 'Field cannot be empty';
+        this.nextElementSibling.className = 'incorrect';
+    } else{
+        var oAphabeticExp = /^[0-9]*$/;
+        var bTest = oAphabeticExp.test(sValue);
+        if(!bTest){
+            this.nextElementSibling.innerHTML = 'Numbers only';
+            this.nextElementSibling.className = 'incorrect';
+        } else{
+            this.nextElementSibling.innerHTML = 'Thanksss';
+            this.nextElementSibling.className = 'correct';
+
+            isValid = true;
+        }
+    }
+
+    return isValid;
+}
+
+var creditNumber = document.querySelector('#credit');
+creditNumber.addEventListener('blur', checkNumeric);
 
 // function checkFilled(){
 

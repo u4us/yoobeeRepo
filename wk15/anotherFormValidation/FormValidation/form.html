@@ -18,15 +18,45 @@
 		<div class="card-container">
 
 			<div class="cards">
-				<div class="card visa-card">
+				<!-- <div class="card visa-card current">
+					<i class="fab fa-cc-visa"></i>
 					<div class="displayCreditNumber">**** **** **** 1234</div>
-					<div class="displayName">John Smith</div>
+					<div class="displayName">John Smith1</div>
 					<div class="displayExpiry">05/19</div>
+				</div> -->
+				<div class="card visa-card current">
+					<div class="flip-box-inner">
+						<div class="flip-box-front">
+							<i class="fab fa-cc-visa"></i>
+							<div class="displayCreditNumber">**** **** **** 1234</div>
+							<div class="displayName">John Smith1</div>
+							<div class="displayExpiry">05/19</div>
+						</div>
+						<div class="flip-box-back">
+							<div class="displayCvv">123</div>
+						</div>
+					</div>
 				</div>
-				<div class="card master-card">
+
+				<!-- <div class="card master-card">
+					<i class="fab fa-cc-mastercard"></i>
 					<div class="displayCreditNumber">**** **** **** 1234</div>
-					<div class="displayName">John Smith</div>
+					<div class="displayName">John Smith2</div>
 					<div class="displayExpiry">05/19</div>
+				</div> -->
+
+				<div class="card master-card">
+					<div class="flip-box-inner">
+						<div class="flip-box-front">
+							<i class="fab fa-cc-mastercard"></i>
+							<div class="displayCreditNumber">**** **** ****1234</div>
+							<div class="displayName">John Smith1</div>
+							<div class="displayExpiry">05/19</div>
+						</div>
+						<div class="flip-box-back">
+							<div class="displayCvv">123</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<i class="fas fa-chevron-left"></i>
@@ -37,12 +67,15 @@
 				<div>
 					<label for="creditNumber">Card Number</label>
 					<input type="text" name="creditNumber" id="credit" placeholder="1234 5678 9012 3456">
+					<span id="numberMessage"><i class="far fa-check-circle"></i></span>
 				</div>
 				<div>
 					<label for="name">Cardholder's name</label>
 					<input type="text" name="name" id="name" placeholder="John Smith">
+					<span id="nameMessage"></span>
 				</div>
 				<div>
+					<label for="expiry">Expiry</label>
 					<select name="expiry" id="expiry">
 						<option value="05/19">05/19</option>
 						<option value="06/19">06/19</option>
@@ -52,7 +85,9 @@
 					</select>
 				</div>
 				<div>
-					<input type="cvv" placeholder="CVV">
+					<label for="cvv">CVV</label>
+					<input type="text" name="cvv" id="cvv" placeholder="CVV">
+					<span id="cvvMessage"></span>
 				</div>
 				<div>
 					<input type="submit" id="submit">
