@@ -1,12 +1,20 @@
 .container{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 300px;
     margin: auto;
     font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.7);
+}
+
+.nav-bar{
+    /* border: 1px solid blue; */
+    text-align: center;
+    padding: 0.5em;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.7);
 }
 
 .card-container{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 200px;
     position: relative;
     
@@ -17,7 +25,7 @@
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-    font-size: 2vw;
+    font-size: 1em;
 }
 
 .card-container .fa-chevron-left{
@@ -53,6 +61,10 @@
     perspective: 1000px;
 }
 
+.fab{
+    font-size: 1.8em;
+}
+
 .flip-box-inner{
     position: relative;
     width: 100%;
@@ -61,6 +73,9 @@
     transition: transform 1s;
     transform-style: preserve-3d;
     border: 1px solid;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
+    /* border-radius: 2px; */
+
 }
 
 .current:hover .flip-box-inner {
@@ -93,26 +108,54 @@
     transform: translate(-50%, -50%);
 }
 
-.nav-bar{
-    border: 1px solid blue;
-    text-align: center;
-    padding: 0.5em;
-}
+
 
 .form-container{
-    border: 1px solid blue;
-    padding: 1em;
+    /* border: 1px solid blue; */
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.7);
+    
     position: relative;
     display: flex;
 }
 
-form>*{
-    padding-bottom: 1em;
+form{
+    width: 100%;
 }
 
+label{
+    font-size: 0.9em;
+}
+
+.wrap{
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.wrap>div{
+    padding-bottom: 1em;
+    /* border: 1px solid; */
+}
+
+input{
+    /* display: block; */
+    /* width: 100%; */
+    /* border: none; */
+    outline: none;
+    transition: all ease 1s;
+}
+
+#submit{
+    padding: 0.75em;
+    
+    width: 100%;
+
+    /* background-color: #ccc; */
+}
 
 span{
     visibility: hidden;
+    color: white;
+    transition: all ease 1s;
 }
 .correct{
     visibility: visible;
@@ -122,4 +165,12 @@ span{
 .incorrect{
     visibility: visible;
     color: red;
+}
+
+.red{
+    border-color: red;
+}
+
+.green{
+    border-color: green;
 }

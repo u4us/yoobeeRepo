@@ -29,7 +29,7 @@
 						<div class="flip-box-front">
 							<i class="fab fa-cc-visa"></i>
 							<div class="displayCreditNumber">**** **** **** 1234</div>
-							<div class="displayName">John Smith1</div>
+							<div class="displayName">John Smith</div>
 							<div class="displayExpiry">05/19</div>
 						</div>
 						<div class="flip-box-back">
@@ -49,8 +49,8 @@
 					<div class="flip-box-inner">
 						<div class="flip-box-front">
 							<i class="fab fa-cc-mastercard"></i>
-							<div class="displayCreditNumber">**** **** ****1234</div>
-							<div class="displayName">John Smith1</div>
+							<div class="displayCreditNumber">**** **** **** 1234</div>
+							<div class="displayName">Jane Doe</div>
 							<div class="displayExpiry">05/19</div>
 						</div>
 						<div class="flip-box-back">
@@ -64,36 +64,44 @@
 		</div>
 		<div class="form-container">
 			<form action="" method="POST">
-				<div>
-					<label for="creditNumber">Card Number</label>
-					<input type="text" name="creditNumber" id="credit" placeholder="1234 5678 9012 3456">
-					<span id="numberMessage"><i class="far fa-check-circle"></i></span>
+				<div class="wrap">
+					<div>
+						<label for="creditNumber">Card Number</label>
+						<input type="text" name="creditNumber" id="credit" placeholder="1234 5678 9012 3456">
+						<!-- <div id="numberMessage"></i></div> -->
+						<span id="numberMessage"></span>
+					</div>
+					<div>
+						<label for="name">Cardholder's name</label>
+						<input type="text" name="name" id="name" placeholder="John Smith">
+						<span id="nameMessage"></span>
+					</div>
+					<div>
+						<label for="expiry">Expiry</label>
+						<select name="expiry" id="expiry">
+							<option value="05/19">05/19</option>
+							<option value="06/19">06/19</option>
+							<option value="07/19">07/19</option>
+							<option value="08/19">08/19</option>
+							<option value="09/19">09/19</option>
+							<option value="10/19">07/19</option>
+							<option value="11/19">08/19</option>
+							<option value="12/19">09/19</option>
+						</select>
+						<span id="expiryMessage"></span>
+					</div>
+					<div>
+						<label for="cvv">CVV</label>
+						<input type="text" name="cvv" id="cvv" placeholder="123">
+						<span id="cvvMessage"></span>
+					</div>
 				</div>
-				<div>
-					<label for="name">Cardholder's name</label>
-					<input type="text" name="name" id="name" placeholder="John Smith">
-					<span id="nameMessage"></span>
-				</div>
-				<div>
-					<label for="expiry">Expiry</label>
-					<select name="expiry" id="expiry">
-						<option value="05/19">05/19</option>
-						<option value="06/19">06/19</option>
-						<option value="07/19">07/19</option>
-						<option value="08/19">08/19</option>
-						<option value="09/19">09/19</option>
-					</select>
-				</div>
-				<div>
-					<label for="cvv">CVV</label>
-					<input type="text" name="cvv" id="cvv" placeholder="CVV">
-					<span id="cvvMessage"></span>
-				</div>
-				<div>
+				<div class="submit-wrapper">
 					<input type="submit" id="submit">
 				</div>
 
 				<!-- <i class="far fa-check-circle"></i> -->
+				<!-- <i class="fas fa-times-circle"></i> -->
 			</form>
 
 			<!-- <form action="" method="post" class="pure-form pure-form-aligned">

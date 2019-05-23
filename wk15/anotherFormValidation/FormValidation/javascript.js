@@ -66,22 +66,22 @@ document.querySelector('#cvv').addEventListener('keyup', updateCvv);
 
 //on blur, validate
 
-function checkNumeric(){
+function checkNumber(){
 
     var isValid = false;
 
     var sValue = this.value;
     if(sValue == ''){
-        this.nextElementSibling.innerHTML = 'Field cannot be empty';
+        this.nextElementSibling.innerHTML = '<i class="fas fa-times-circle"></i>';
         this.nextElementSibling.className = 'incorrect';
     } else{
-        var oAphabeticExp = /^[0-9]*$/;
-        var bTest = oAphabeticExp.test(sValue);
+        var oNumericExp = /^([0-9]{16})*$/;
+        var bTest = oNumericExp.test(sValue);
         if(!bTest){
-            this.nextElementSibling.innerHTML = 'Numbers only';
+            this.nextElementSibling.innerHTML = '<i class="fas fa-times-circle"></i>';
             this.nextElementSibling.className = 'incorrect';
         } else{
-            this.nextElementSibling.innerHTML = 'Thanksss';
+            this.nextElementSibling.innerHTML = '<i class="far fa-check-circle">';
             this.nextElementSibling.className = 'correct';
 
             isValid = true;
@@ -92,7 +92,85 @@ function checkNumeric(){
 }
 
 var creditNumber = document.querySelector('#credit');
-creditNumber.addEventListener('blur', checkNumeric);
+creditNumber.addEventListener('blur', checkNumber);
+
+function checkAlphabetic(){
+
+    var isValid = false;
+
+    var sValue = this.value;
+    if(sValue == ''){
+        this.nextElementSibling.innerHTML = '<i class="fas fa-times-circle"></i>';
+        this.nextElementSibling.className = 'incorrect';
+        this.className = 'red';
+    } else{
+        var oNumericExp = /^[A-Za-z" "]*$/;
+        var bTest = oNumericExp.test(sValue);
+        if(!bTest){
+            this.nextElementSibling.innerHTML = '<i class="fas fa-times-circle"></i>';
+            this.nextElementSibling.className = 'incorrect';
+            this.className = 'red';
+        } else{
+            this.nextElementSibling.innerHTML = '<i class="far fa-check-circle">';
+            this.nextElementSibling.className = 'correct';
+            this.className = 'green';
+
+            isValid = true;
+        }
+    }
+
+    return isValid;
+}
+
+var aName = document.querySelector('#name');
+aName.addEventListener('blur', checkAlphabetic);
+
+//check expiry?
+
+function checkCvv(){
+
+    var isValid = false;
+
+    var sValue = this.value;
+    if(sValue == ''){
+        this.nextElementSibling.innerHTML = '<i class="fas fa-times-circle"></i>';
+        this.nextElementSibling.className = 'incorrect';
+    } else{
+        var oNumericExp = /^([0-9]{3})*$/;
+        var bTest = oNumericExp.test(sValue);
+        if(!bTest){
+            this.nextElementSibling.innerHTML = '<i class="fas fa-times-circle"></i>';
+            this.nextElementSibling.className = 'incorrect';
+        } else{
+            this.nextElementSibling.innerHTML = '<i class="far fa-check-circle">';
+            this.nextElementSibling.className = 'correct';
+
+            isValid = true;
+        }
+    }
+
+    return isValid;
+}
+
+var aCvv = document.querySelector('#cvv');
+aCvv.addEventListener('blur', checkCvv);
+
+function checkAll(e){
+    e.preventDefault();
+
+    var isNumberValid = checkNumber.call(creditNumber);
+    var isNameValid = checkAlphabetic.call(aName);
+    var isCvvValid = checkCvv.call(aCvv);
+
+    var isAllValid = isNumberValid && isNameValid && isCvvValid;
+    if(!isAllValid){
+        e.preventDefault();
+    }
+
+}
+
+var aForm = document.querySelector('form');
+aForm.addEventListener('submit', checkAll);
 
 // function checkFilled(){
 
