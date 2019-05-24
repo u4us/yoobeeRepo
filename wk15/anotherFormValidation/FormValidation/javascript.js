@@ -74,15 +74,18 @@ function checkNumber(){
     if(sValue == ''){
         this.nextElementSibling.innerHTML = '<i class="fas fa-times-circle"></i>';
         this.nextElementSibling.className = 'incorrect';
+        this.className = 'red';
     } else{
         var oNumericExp = /^([0-9]{16})*$/;
         var bTest = oNumericExp.test(sValue);
         if(!bTest){
             this.nextElementSibling.innerHTML = '<i class="fas fa-times-circle"></i>';
             this.nextElementSibling.className = 'incorrect';
+            this.className = 'red';
         } else{
             this.nextElementSibling.innerHTML = '<i class="far fa-check-circle">';
             this.nextElementSibling.className = 'correct';
+            this.className = 'green';
 
             isValid = true;
         }
@@ -135,15 +138,18 @@ function checkCvv(){
     if(sValue == ''){
         this.nextElementSibling.innerHTML = '<i class="fas fa-times-circle"></i>';
         this.nextElementSibling.className = 'incorrect';
+        this.className = 'red';
     } else{
         var oNumericExp = /^([0-9]{3})*$/;
         var bTest = oNumericExp.test(sValue);
         if(!bTest){
             this.nextElementSibling.innerHTML = '<i class="fas fa-times-circle"></i>';
             this.nextElementSibling.className = 'incorrect';
+            this.className = 'red';
         } else{
             this.nextElementSibling.innerHTML = '<i class="far fa-check-circle">';
             this.nextElementSibling.className = 'correct';
+            this.className = 'green';
 
             isValid = true;
         }
