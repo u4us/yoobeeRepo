@@ -48,7 +48,7 @@ $(function(){
                     $(this).prev().find('i').removeClass('fa-chevron-circle-down').addClass('fa-chevron-circle-up');
                 });
 
-                //update state of the element
+                //update state of the element; ct. state variable
                 $(this).data('state', 'open');
 
             } else{
