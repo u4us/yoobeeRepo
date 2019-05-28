@@ -1,0 +1,138 @@
+
+/* Color Theme Swatches in RGBA */
+$color1: rgba(255,167,165, 1);
+$color2: rgba(255,214,214, 1);
+$color3: rgba(255,248,216, 1);
+$color4: rgba(150,165,117, 1);
+$color5: rgba(93,112,68, 1);
+
+// reset module
+
+// layout module
+.app{
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    .layer{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+
+        header{
+            height: 2em;
+            // border: 1px solid red;
+        }
+
+        main{
+            flex: 1 0 auto;
+            // border: 1px solid red;
+        }
+
+        footer{
+            height: 2em;
+            // border: 1px solid red;
+        }
+    }
+    // for all
+    header{}
+    main{}
+    footer{}
+}
+
+// animation modules
+.layer{
+    transition: all ease 1s;
+}
+
+.move-left{
+    transform: translateX(-100%);
+}
+
+.move-right{
+    transform: translateX(100%);
+}
+
+.current{
+    transform: translate(0,0);
+}
+
+// header module
+.header{
+    //attach .header so that styling is removeable eg .header2
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    background-color: rgba(0,0,0,0.3);
+
+    .left{
+        font-size: 1.5em;
+
+    }
+
+    .middle{
+        flex: 1 0 auto;
+        text-align: center;
+    }
+
+    .right{
+        font-size: 1.5em;
+
+    }
+}
+
+// themes module
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.rainbow{
+    >:nth-child(4n+1){
+        background-color: $color1;
+    }
+    >:nth-child(4n+2){
+        background-color: $color2;
+    }
+    >:nth-child(4n+3){
+        background-color: $color4;
+    }
+    >:nth-child(4n+4){
+        background-color: $color5;
+    }
+}
+
+.main-layer{
+    background-color: $color3;
+}
+
+// features module
+.features{
+    .feature{
+        font-size: 2em;
+        padding: 0.5em;
+    }
+}
+
+//nav module
+.nav{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li{
+        padding: 0.5em;   
+    }
+
+    a{
+        display: block;
+        padding: 0.5em;
+        font-size: 1.5em;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+// misc

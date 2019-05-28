@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>Document</title>
+</head>
+<body>
+	
+	<div class="app">
+		<div class="layer main-layer">
+			<header class="header">
+				<i class="fab fa-adobe left"></i>
+				<div class="middle">main</div>
+				<i class="fas fa-bars right" data-target=".layer1"></i>
+			</header>
+			<main>
+				<div class="features rainbow">
+					<div class="feature" data-target=".layer1">Lorem.</div>
+					<div class="feature" data-target=".layer2">Accusantium.</div>
+					<div class="feature" data-target=".layer3">Inventore.</div>
+					<div class="feature" data-target=".layer4">Reiciendis?</div>
+				</div>
+			</main>
+			<footer></footer>
+		</div>
+		<div class="rainbow">
+			<div class="layer layer1 move-left">
+				<header class="header">
+					<i class="fas fa-arrow-left left" data-dismiss=".layer1"></i>
+					<div class="middle">Back</div>
+				</header>
+				<main>
+					<ul class="nav rainbow">
+						<li><a href="#">Lorem.</a></li>
+						<li><a href="#" data-dismiss=".layer1" data-target=".layer2">Voluptas!</a></li>
+						<li><a href="#">Eaque.</a></li>
+						<li><a href="#">Optio.</a></li>
+					</ul>
+				</main>
+				<footer></footer>
+			</div>
+			<div class="layer layer2 move-right">
+				<header class="header">
+					<i class="fas fa-arrow-left left" data-dismiss=".layer2"></i>
+					<div class="middle">Back</div>
+				</header>
+				<main>layer2</main>
+				<footer></footer>
+			</div>
+			<div class="layer layer3 move-right">
+				<header class="header">
+					<i class="fas fa-arrow-left left" data-dismiss=".layer3"></i>
+					<div class="middle">Back</div>
+				</header>
+				<main>layer1</main>
+				<footer></footer>
+			</div>
+			<div class="layer layer4 move-right">
+				<header class="header">
+					<i class="fas fa-arrow-left left" data-dismiss=".layer4"></i>
+					<div class="middle">Back</div>
+				</header>
+				<main>layer4</main>
+				<footer></footer>
+			</div>
+		</div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
