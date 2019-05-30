@@ -1,0 +1,171 @@
+
+
+.formGroup{
+    padding: 0.5em 0;
+
+}
+
+.formGroup label{
+    display: block;
+    width: 40%;
+    float: left;
+    text-align: right;
+    font-weight: bold;
+    padding-right:1em;
+    box-sizing:border-box; /*for fixing wee alignment*/
+}
+
+.formGroup label span{
+    display: block;
+    font-weight: normal;
+    color: gray;
+    font-size: 0.7em;
+
+}
+
+.formGroup input{
+    display: block;
+    width: 40%;
+    float: left;
+    height: 1.5em;
+
+}
+
+.formGroup:after{
+
+    content: "";
+    display: block; 
+    clear:both;
+}
+
+.formGroup.buttonGroup{
+    padding-left: 40%;
+}
+
+.formGroup.buttonGroup input{
+    height: auto;
+    width: auto;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+
+/*modal styling*/
+
+.contactForm{
+    width: 70%;
+    max-width: 40em;
+    text-transform: uppercase;
+    background-color: white;
+    margin: 7em auto;
+    padding: 2em;
+    border-radius: 0.2em;
+    border:thin #eee solid;
+}
+
+.contactForm .message{
+    color: red;
+    padding-left: 1em;
+    font-size: 0.7em;
+}
+
+.container{
+    min-height: 100vh;
+    border-bottom: thin transparent solid;
+    border-top: thin transparent solid;
+    overflow: hidden;
+    padding-top:2em;
+}
+.container:nth-child(odd){
+    background-color: rgba(255,0,0,0.1);
+}
+
+h1{
+    
+    text-transform: uppercase;
+    text-indent: 0.5em;
+    /* animation: fancy-header ease 1s alternate infinite; */
+    transition: all ease 1s;
+    opacity: 0;
+}
+
+h1.show{
+    opacity: 1;
+}
+
+/* @keyframes fancy-header{
+    0%{
+        transform: scale(0.5);
+        color: black;
+    }
+    50%{
+        color: red;
+    }
+    100%{
+        transform: scale(1);
+        color: black;
+    }
+} */
+
+
+.header {
+    text-align: center;
+}
+
+.pure-menu-horizontal{
+    background-color: rgba(0,0,0,0.2);
+    font-size: 1.5em;
+    transition: all ease 1s;
+}
+
+.pure-menu-horizontal.fixed{
+    position: fixed;
+    top:0;
+    left: 0;
+    font-size: 1em;
+}
+
+.pure-menu-item{
+    transition: all ease 0.5s;
+    border-bottom: 0.3em transparent solid;
+}
+
+.pure-menu-item a,.pure-menu-item a:hover, .pure-menu-item a:active,.pure-menu-item a:focus{
+    background-color: rgba(0,0,0,0);
+
+}
+.pure-menu-horizontal .active{
+    border-bottom: 0.3em red solid;
+    background-color: #eee;
+
+}
+
+.heading-wrap{
+    /* border: 1px solid red; */
+    border: thin transparent solid;
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    
+}
+
+.heading-wrap::before{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 1em;
+    height: 0%;
+    /* better to use background-image, because border: 0 still shows */
+    background-image: linear-gradient(orange 0.5em, transparent 0.5em),
+        linear-gradient(to top, orange 0.5em, transparent 0.5em),
+        linear-gradient(90deg, orange 0.5em, transparent 0.5em);
+
+    transition: all ease 1s;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.heading-wrap.grow::before{
+    height: 100%;
+}
