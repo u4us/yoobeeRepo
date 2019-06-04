@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.nav{
+    border: 1px solid red;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav>ul{
+    display: flex;
+    padding: 1em;
+}
+
+.nav li{
+    flex: 1 0 auto;
+    text-align: center;
+    border: 1px solid blue;
+}
+
+.nav a{
+    display: block;
+}
+
+.nav .active{
+    background-color: green;
+    color: red;
+}
+
+.sections{
+    
+}
+
+.section{
+    border: 1px solid red;
+    min-height: 100vh;
+
+    box-sizing: border-box;
+    padding-top:3em;
+}
+
+.section>h1{
+    text-align: center;
+    padding: 1em;
+}
+
+.section:nth-child(2n+2){
+    background-color: #ccc;
+}
+
+.progress-bar{
+    border:1px green solid;
+
+    width:20em;
+
+}
+
+.progress{
+    background-color:green;
+    height:0.5em;
+    width:0;
+    transition:ease all 1s;
+
+}
+
+ul::after{
+    content: '';
+    background-color:green;
+    height:0.5em;
+    width:0;
+    transition:ease all 1s;
+}
