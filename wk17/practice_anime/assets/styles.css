@@ -1,7 +1,8 @@
-.row{
-    border: 1px solid red;
+.section{
+    /* border: 1px solid red; */
+    min-height: 100vh;
 }
 
-.col{
-    border: 1px solid blue;
+.col-sm-6{
+    padding-bottom: 1em;
 }

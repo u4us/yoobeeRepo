@@ -93,7 +93,9 @@ $(function(){
         //     anime2.play();
         // }
 
-        // $(document).height()-$(window).height()
+        // scrolltop - section$offset
+        // earlier +, later -
+        // /500 is the framelength
         var progress = (scrollTop-section2Offset+500)/500;
         timeline.seek(timeline.duration*progress);
         console.log(scrollTop);
