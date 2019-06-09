@@ -1,7 +1,28 @@
+*{
+    padding: none;
+    margin: none;
+}
+
 .container{
     border: 1px solid black;
     width: 500px;
     height: 500px;
     margin: auto;
     overflow: hidden;
+    position: relative;
 }
+
+.motion1{
+    position: absolute;
+}
+
+.motion1 .someBox{
+    border: 1px solid;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
