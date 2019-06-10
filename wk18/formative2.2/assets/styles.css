@@ -5,18 +5,61 @@
 
 .section1{
     border: 1px solid red;
-    height: 600vh;
+    height: 1100vh;
     overflow: hidden;
+    position: relative;
 }
 
 .section1 .viewport{
     border: 1px solid blue;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
+    /* position: relative; */
+}
+
+.layers .layer{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    /* background-position: top center;
+    background-repeat: no-repeat; */
+}
+
+.layer0{
+    background-image: url(Layers/Sky.png);
+    z-index: 0;
+}
+.layer1{
+    background-image: url(Layers/BG_Decor.png);
+    z-index: 10;
+}
+.layer2{
+    background-image: url(Layers/Middle_Decor.png);
+    z-index: 20;
+}
+.layer3{
+    background-image: url(Layers/Foreground.png);
+    z-index: 30;
+}
+.layer4{
+    background-image: url(Layers/Ground.png);
+    z-index: 40;
 }
 
 .layer5{
     width: 100px;
     height: 100px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: 10vh;
+    background-image: url(PinClipart.com_red-ribbon-week-clipart_4025765.png);
+    background-position: center;
+    background-size: cover;
+    z-index: 21;
 }
