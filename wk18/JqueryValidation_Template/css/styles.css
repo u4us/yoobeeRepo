@@ -1,0 +1,8 @@
+.pure-control-group label.pure-radio{
+	width: 4em;
+}
+.pure-control-group label.error{
+	width: 20em;
+	text-align: left;
+	margin: 1em;
+}
