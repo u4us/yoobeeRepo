@@ -1,0 +1,8 @@
+.things{
+    border: 1px solid;
+    width: 90vw;
+    /* will automatically scale based on viewBox presets */
+    /* height: 60vw; */
+    margin: auto;
+    display: block;
+}
