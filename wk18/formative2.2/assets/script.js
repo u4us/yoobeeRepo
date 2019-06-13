@@ -44,9 +44,9 @@ $(function(){
     });
 
     $('[data-target]').on('click', function(){
-        $($(this).data('target')).addClass('animated swing');
-        $($(this).data('target')).one('animationend', function(){
-            $(this).removeClass('swing').addClass('invisible');
-        });
+        // $('.nav').children().removeClass('highlight');
+        $(this).addClass('highlight');
+        $('.panel').removeClass('current');
+        $($(this).data('target')).addClass('current');
     });
 });

@@ -3,6 +3,7 @@
     margin: 0;
     list-style-type: none;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container{
@@ -29,7 +30,7 @@
 }
 .section1 .layers{
 /* .layers .layer{ */
-    border: 1px solid green;
+    /* border: 1px solid green; */
     /* position: relative; */
     position: absolute;
     top: 0;
@@ -40,7 +41,7 @@
     background-repeat: no-repeat; */
 }
 .section1 .layer{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -194,23 +195,15 @@
     left: 70vw;
     bottom: 10vh;
 }
-.layer6{
-    /* width: 100px;
-    height: 100px;
-    border: 1px solid red;
-    position: absolute;
-    bottom: 15vh;
-    background-image: url(PinClipart.com_red-ribbon-week-clipart_4025765.png); */
-}
 
 .signpost{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 80vw;
     height: 30vh;
     background-image: url(Asset_1.svg);
     background-repeat: no-repeat;
     /* background-size: cover; */
-    background-position: bottom;
+    background-position: center;
     position: absolute;
     bottom: 0vh;
 }
@@ -219,14 +212,25 @@
     display: flex;
     justify-content: space-around;
     color: white;
+    width: 80%;
+    margin: 0 auto;
+    line-height: 25vh;
+    text-transform: uppercase;
+    
 }
 
-.invisible{
-    opacity: 0;
+.nav>div:hover{
+    transition: color ease 1s;
+    color: orange;
+    opacity: 0.5;
+}
+
+.highlight{
+    color: salmon;
 }
 
 .panel{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     background-image: url(Asset_2.svg);
     /* background-size: cover; */
     background-repeat: no-repeat;
@@ -234,15 +238,22 @@
     width: 80vw;
     height: 60vh;
     position: absolute;
-    top: 10vh;
+    top: -100vh;
     left: 50vw;
     transform: translate(-50%,0);
+    z-index: 0;
+    opacity: 0;
+    transition: all ease 1s;
+}
+
+.current{
+    top: 10vh;
+    opacity: 1;
 }
 
 .layer10{
     pointer-events: none;
 }
-
 
 .bounce-5 {
     animation-name: bounce-5;
