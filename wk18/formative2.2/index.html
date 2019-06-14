@@ -8,28 +8,51 @@
     <link rel="stylesheet" href="assets/animate.css">
     <link rel="stylesheet" href="assets/styles.css">
     <title>Document</title>
+
+    <script>
+        //implement drag drop minigame
+        
+        // function allowDrop(ev) {
+        // ev.preventDefault();
+        // }
+
+        // function drag(ev) {
+        // ev.dataTransfer.setData("text", ev.target.id);
+        // }
+
+        // function drop(ev) {
+        // ev.preventDefault();
+        // var data = ev.dataTransfer.getData("text");
+        // ev.target.appendChild(document.getElementById(data));
+        // }
+    </script>
 </head>
 <body>
     <div class="section1 container">
         <div class="viewport">
-            <div class="layers parallax" id="scene">
-                <div class="layer layer0">0</div>
-                <div class="layer layer1" data-depth="0.01">1</div>
-                <div class="layer layer2" data-depth="0.02">2</div>
-                <div class="layer layer3" data-depth="0.03">3</div>
-                <div class="layer layer4" data-depth="0.04">4</div>
+            <div class="layers" >
+                <div class="wrap" id="scene">
+                <div class="layer layer0"></div>
+                <div class="layer layer1" data-depth="0.01"></div>
+                <div class="layer layer2" data-depth="0.04"></div>
+                <div class="layer layer3" data-depth="0.07"></div>
+                <div class="layer layer4" data-depth="0.10"></div>
+                </div>
             </div>
+            <!-- <div id="dropbox" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
             <div class="layers layer5">
-                <div class="singleMushroom bounce-5">5</div>
+                <!-- <div class="singleMushroom bounce-5" id="test" draggable="true" ondragstart="drag(event)"></div> -->
+
+                <div class="singleMushroom bounce-5" id="test"></div>
             </div>
             <div class="layers layer6">
-                <div class="singleSlime bounce-5">6</div>
+                <div class="singleSlime bounce-5" id="test2"></div>
             </div>
             <div class="layers layer7">
-                <div class="singlePig bounce-5"></div>
+                <div class="singlePig bounce-5" id="test3"></div>
             </div>
             <div class="layers layer8">
-                <div class="mushroom mushroom1 bounce-5"></div>
+                <div class="mushroom mushroom1 bounce-5" ></div>
                 <div class="mushroom mushroom2 bounce-5"></div>
                 <div class="slime slime1 bounce-5"></div>
                 <div class="slime slime2 bounce-5"></div>
@@ -54,16 +77,30 @@
             </div>
             <div class="layers layer10">
                 <div class="panel news">
-                    <div>News</div>
+                    <div>
+                        <h1>News</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi deserunt dolore id porro, praesentium hic! Eius exercitationem accusamus impedit cumque?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, fugit laborum illo quos in assumenda doloremque animi totam illum rem.</p>
+                    </div>
                 </div>
                 <div class="panel story">
-                    <div>Story</div>
+                    <div>
+                        <h1>Story</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi deserunt dolore id porro, praesentium hic! Eius exercitationem accusamus impedit cumque?</p>
+                    </div>
                 </div>
                 <div class="panel character">
-                    <div>Chracter</div>
+                    <div>
+                        <h1>Character</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi deserunt dolore id porro, praesentium hic! Eius exercitationem accusamus impedit cumque?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate commodi voluptatibus voluptas molestias voluptates quia. Corporis ipsum ea repudiandae doloribus.</p>
+                    </div>
                 </div>
                 <div class="panel community">
-                    <div>Community</div>
+                    <div>
+                        <h1>Community</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi deserunt dolore id porro, praesentium hic! Eius exercitationem accusamus impedit cumque?</p>
+                    </div>
                 </div>
             </div>
         </div>

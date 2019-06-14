@@ -40,11 +40,29 @@
     /* background-position: top center;
     background-repeat: no-repeat; */
 }
+
+/* #dropbox{
+    height: 100px;
+    width: 100px;
+    border: 1px solid red;
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+.wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
 .section1 .layer{
     /* border: 1px solid black; */
     position: absolute;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background-position: center;
     background-size: cover;
     /* overflow: hidden; */
@@ -88,7 +106,7 @@
     background-size: cover;
     z-index: 19;
     position: absolute;
-    bottom: 10vh;
+    bottom: 8vh;
 
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -103,7 +121,7 @@
     background-size: cover;
     z-index: 19;
     position: absolute;
-    bottom: 10vh;
+    bottom: 9vh;
     animation-delay: 0.5s;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -221,12 +239,11 @@
 
 .nav>div:hover{
     transition: color ease 1s;
-    color: orange;
-    opacity: 0.5;
+    color: lightgreen;
 }
 
 .highlight{
-    color: salmon;
+    color: green;
 }
 
 .panel{
@@ -253,6 +270,21 @@
 
 .layer10{
     pointer-events: none;
+}
+
+.panel>div{
+    /* border: 1px solid blue; */
+    max-width: 40vw;
+    margin: 1em auto;
+    color: brown;
+}
+
+.panel>div>h1{
+    padding: 0.5em;
+}
+
+.panel>div>p{
+    padding-bottom: 0.5em;
 }
 
 .bounce-5 {
