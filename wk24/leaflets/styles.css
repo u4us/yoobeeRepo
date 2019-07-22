@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+}
+
+#map{
+    border: 1px solid red;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.marker-box{
+    font-size: 2em;
+}
