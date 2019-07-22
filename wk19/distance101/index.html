@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/styles.css">
+	<title>Document</title>
+
+</head>
+<body>
+
+	<form class="pure-form pure-form-stacked">
+	    <fieldset>
+	        <h1>The distance : <span>0</span>m</h1>
+
+	        <label for="from">From</label>
+	        <select id="from" name="from">
+	            <option value="Auckland">Auckland</option>
+	            <option value="Whangarei">Whangarei</option>
+	            <option value="Hamilton">Hamilton</option>
+	            <option value="Tauranga">Tauranga</option>
+	        </select>
+
+	        <label for="to">To</label>
+	        <select id="to" name="to">
+	            <option value="Auckland">Auckland</option>
+	            <option value="Whangarei">Whangarei</option>
+	            <option value="Hamilton">Hamilton</option>
+	            <option value="Tauranga">Tauranga</option>
+	        </select>
+
+	        <button type="submit" class="pure-button pure-button-primary">Get Distance</button>
+	    </fieldset>
+
+	    <p class="distance"></p>
+	    <p class="time"></p>
+	</form>
+		
+	<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDknEtmtQzCjjFGOAJiHVFKcBegAsUBUKc&callback=initMap">
+    </script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="assets/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

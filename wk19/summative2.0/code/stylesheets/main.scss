@@ -1,0 +1,12 @@
+@charset 'UTF-8';
+
+@import 'abstracts/mixins',
+        'abstracts/variables';
+
+@import 'components/modal',
+        'components/silder';
+
+@import 'layout/app';
+        
+@import 'pages/final',
+        'pages/home';

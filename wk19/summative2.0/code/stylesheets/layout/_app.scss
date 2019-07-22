@@ -1,0 +1,52 @@
+.app{
+    border: 1px solid #ccc;
+    // border-radius: 45px;
+    // overflow: hidden;
+    //720p 
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    position: relative;
+
+    .layer{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+    }
+
+    header{
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        padding: 0.5em;
+        box-sizing: border-box;
+        background-color: $primary-color;
+        color: white;
+    
+        .left{
+            font-size: 1.5em;
+        }
+    
+        .middle{
+            flex: 1 0 auto;
+            text-align: center;
+        }
+    
+        .right{
+            font-size: 1.5em;
+        }
+    }
+    
+    main{
+        flex: 1 0 auto;
+    }
+}
+
+.aucklandTransport{
+    background-image: url(/wk19/summative2.0/code/assets/ATScreenshot.jpg);
+    width: 100%;
+    height: 100%;
+}

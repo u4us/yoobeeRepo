@@ -6,9 +6,146 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
     <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body>
-    
+    <div class="app">
+        <!-- <div class="layer aucklandTransport"></div> -->
+        <div class="layer home-layer">
+            <header class="header">
+                <!-- <i class="fas fa-arrow-left left"></i> -->
+                <div class="middle">Calculator</div>
+                <!-- <i class="fas fa-bars"></i> -->
+            </header>
+            <main>
+                <div id="map"></div>
+                <div class="icons">
+                    <div data-target=".peopleModal">
+                        <div class="icon peopleIcon"><i class="fas fa-user-friends"></i></div>
+                        <p>People</p>
+                    </div>
+                    <div data-target=".daysModal">
+                        <div class="icon daysIcon"><i class="far fa-calendar-alt"></i></div>
+                        <p>Days</p>
+                    </div>
+                    <div data-target=".vehicleModal">
+                        <div class="icon"><i class="fas fa-car"></i></div>
+                        <p>Vehicle</p>
+                    </div>
+                </div>
+                <div class="modal peopleModal">
+                    <p>Select Number of People</p>
+                    <div class="sliderContainer peopleSlider">
+                        <input type="range" min="0" max="6" value="0" class="slider" id="peopleRange">
+                    </div>
+                    <br><div class="closeModal">Close</div>
+                </div>
+                <div class="modal daysModal">
+                    <p>Select Number of Days</p>
+                    <div class="sliderContainer peopleSlider">
+                        <input type="range" min="0" max="15" value="0" class="slider" id="daysRange">
+                    </div>
+                    <br><div class="closeModal">Close</div>
+                </div>
+                <div class="modal vehicleModal">
+                    <p>Available Vehicles</p>
+                    <div class="vehicles vehicleContainer">
+                        <div class="vehicle vehicle1" data-name="MotorCycle" data-cost="109" data-fuel="3.7">
+                            <p><i class="fas fa-motorcycle"></i></p>
+                            <h5>Motorcycle</h5>
+                            <p>
+                                $109/d<br>
+                                3.7L/100km
+                            </p>
+                        </div>
+                        <div class="vehicle vehicle2" data-name="Small Car" data-cost="129" data-fuel="8.5">
+                            <p><i class="fas fa-car-alt"></i></p>
+                            <h5>Small Car</h5>
+                            <p>
+                                $129/d<br>
+                                8.5L/100km
+                            </p>
+                        </div>
+                        <div class="vehicle vehicle3" data-name="Large Car" data-cost="144" data-fuel="9.7">
+                            <p><i class="fas fa-car-side"></i></p>
+                            <h5>Large Car</h5>
+                            <p>
+                                $144/d<br>
+                                9.7L/100km
+                            </p>
+                        </div>
+                        <div class="vehicle vehicle4" data-name="Motor Home" data-cost="200" data-fuel="17">
+                            <p><i class="fas fa-truck"></i></p>
+                            <h5>Motor-Home</h5>
+                            <p>
+                                $200/d<br>
+                                17L/100km
+                            </p>
+                        </div>
+                    </div>
+                    <br><div class="closeModal">Close</div>
+                </div>
+                <div class="distance">
+                    <p>Calculate Travel Distance</p>
+                    <form>
+                        <select id="from" name="from">
+                            <option value="Auckland">Auckland</option>
+                            <option value="Wellington">Wellington</option>
+                            <option value="Christchurch">Christchurch</option>
+                            <option value="Dunedin">Dunedin</option>
+                        </select>
+                        <p>to</p>
+                        <select id="to" name="to">
+                            <option value="Auckland">Auckland</option>
+                            <option value="Wellington">Wellington</option>
+                            <option value="Christchurch">Christchurch</option>
+                            <option value="Dunedin">Dunedin</option>
+                        </select>
+                        <br><button type="submit" class="calculate"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+                <div class="modal final">
+                    <h4>Overview</h4>
+                    <div>
+                        <p>Number of People</p>
+                        <p id="printPeople"></p>
+                    </div>
+                    <div>
+                        <p>Number of Days</p>
+                        <p id="printDays"></p>
+                    </div>
+                    <div>
+                        <p>Vehicle Selection</p>
+                        <p id="vehicleName"></p>
+                    </div>
+                    <div>
+                        <p>Vehicle Cost</p>
+                        <p id="vehicleCost"></p>
+                    </div>
+                    <div>
+                        <p>Distance</p>
+                        <p id="distance"></p>
+                    </div>
+                    <div>
+                        <p>Fuel Consumption</p>
+                        <p id="vehicleFuel"></p>
+                    </div>
+                    <div class="closeModal" id="fix">Close</div>
+                </div>
+            </main>
+        </div>
+        <!-- <div class="layer final-layer">
+            <header class="header"></header>
+            <main></main>
+        </div> -->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzR7VzA3I50DjkiV0pvcq1WOM6pbzZxco&callback=initMap"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
