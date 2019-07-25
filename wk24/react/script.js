@@ -1,1 +1,0 @@
-//install node, use npm to install React
