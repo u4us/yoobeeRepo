@@ -47,12 +47,15 @@ oDog1.bark();
 //first-class object
 //functions can stored in a variable and passed around.
 var makeNoise = oDog1.bark;
-makeNoise();
+makeNoise(); //refers to nothing
 
-// var oBoat = {
-//     name: 'Titanic',
-//     speed: 100,
-//     honk: makeNoise
-// };
-// oBoat.honk();
-// console.log(oBoat);
+var oBoat = {
+    name: 'Titanic',
+    speed: 100,
+    honk: makeNoise
+};
+oBoat.honk();
+console.log(oBoat);
+
+//declarative: 'this' would refer the boat
+//arrow: 'this' would refer to the dog
