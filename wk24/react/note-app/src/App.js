@@ -17,6 +17,7 @@ class App extends Component{
 	constructor(props){
 		super(props);
 
+		//use setters
 		this.state = {
 			friends: [],
 			color: 'green',
@@ -34,7 +35,7 @@ class App extends Component{
 					text: 'Learn React'
 				}
 			],
-			noteInputValue: '',
+			noteInputValue: ''
 		}
 
 		// this.notes = [
@@ -102,7 +103,9 @@ class App extends Component{
 		var filteredNotes = notes.filter(function(item){
 			return item.id !== noteId
 		});
-		this.setState({notes: filteredNotes});
+		this.setState({
+			notes: filteredNotes
+		});
 
 	};
 
