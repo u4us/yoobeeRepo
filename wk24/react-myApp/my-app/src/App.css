@@ -30,6 +30,10 @@
     justify-content: space-between;
 }
 
+.note>i{
+  padding-left: 1em;
+}
+
 .note:nth-child(2n+2){
     background-color: #ccc;
 }

@@ -43,7 +43,7 @@ class App extends Component{
         console.log(e.target)
     };
 
-    // 8. add a handleClick method
+    // 8. add a handleClick method + hook
     handleAddNoteClick = (e) =>{
         var note = {
             id: Date.now(),
@@ -73,15 +73,15 @@ class App extends Component{
             <div className= "container">
                 <header>
                     <div className="title">
-                        Daily Todo List
+                        Todo List
                     </div>
                 </header>
                 <section>
                     <div className="notes">
                         <div className="note new-note">
                             
-                            <input type="text" className="form-control" id="note-input" placeholder="Add note" onChange={this.handleNoteInputChange} />
-                            <i className="fas fa-plus-square" value={this.state.noteInputValue} onClick={this.handleAddNoteClick}></i>
+                            <input type="text" className="form-control" id="note-input" placeholder="Add note"  value={this.state.noteInputValue} onChange={this.handleNoteInputChange} />
+                            <i className="fas fa-plus-square" onClick={this.handleAddNoteClick}></i>
                         </div>
 
                         {/* 4. remove data and map new data */}
