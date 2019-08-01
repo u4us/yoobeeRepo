@@ -45,6 +45,8 @@ class App extends Component{
 
     // 8. add a handleClick method + hook
     handleAddNoteClick = (e) =>{
+        //access
+        //add
         var note = {
             id: Date.now(),
             content: this.state.noteInputValue

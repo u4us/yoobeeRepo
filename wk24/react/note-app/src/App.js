@@ -42,14 +42,6 @@ class App extends Component{
 		// 	{
 		// 		id: 1,
 		// 		text: 'Watch Youtube'
-		// 	},
-		// 	{
-		// 		id: 2,
-		// 		text: 'Cook Dinner'
-		// 	},
-		// 	{
-		// 		id: 3,
-		// 		text: 'Learn React'
 		// 	}
 		// ];
 	}
@@ -99,7 +91,7 @@ class App extends Component{
 	removeNote = (noteId) => {
 		var notes = this.state.notes;
 
-		//remove the selected note: boolean
+		// remove the selected note: boolean
 		var filteredNotes = notes.filter(function(item){
 			return item.id !== noteId
 		});
@@ -116,9 +108,10 @@ class App extends Component{
 				<div className="container">
 					<div className="notes">
 						{
-							//{} for js, () for html, similar to jstl
+							// {} for js, () for html, similar to jstl
 
-							//need to define this; use arrow function
+							// need to define this; use arrow function
+							// this.notes.map((note) => {
 							// this.state.notes.map(function(note){
 							this.state.notes.map((note) => {
 								// console.log(this)
