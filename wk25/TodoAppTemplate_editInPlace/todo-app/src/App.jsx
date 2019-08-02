@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 // 3. import the Component
 import NewTodoForm from './NewTodoForm';
 import Todo from './Todo';
-
 import './App.css';
 
 class App extends Component{
