@@ -40,13 +40,27 @@ class App extends Component{
             todos: newList
         });
     };
-    removeTodo = (id) =>{};
-    updateTodo = (id, data) =>{};
+
+    // 9. console, $r.removeTodo(1)
+    removeTodo = (id) =>{
+        var todos = this.state.todos;
+        //!== ==; part of the list
+        var filtered = todos.filter((todo)=>{
+            return todo.id !== id;
+        });
+        this.setState({
+            todos: filtered
+        });
+    };
+
+    updateTodo = (id, data) =>{
+
+    };
 
     render(){
         return(
             <div className="wrap">
-                <button onClick={()=>{this.addTodo({content:'testing123',priority:'123'})}}>test</button>
+                {/* <button onClick={()=>{this.addTodo({content:'testing123',priority:'123'})}}>test</button> */}
                 <div className="container">
                     <div className="todos">
 
@@ -65,6 +79,8 @@ class App extends Component{
                                 var todoProps = {
                                     ...todo,
                                     key: todo.id,
+                                    // 10. pass the function to the Todo Component
+                                    removeTodo: this.removeTodo
                                 };
                                 return(
                                     // <Todo content={todo.content} priority={todo.priority}/>

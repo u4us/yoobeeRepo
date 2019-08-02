@@ -7,6 +7,11 @@ class Todo extends Component{
 
     }
 
+    // 11. handle hook the passed function from App
+    handleTodoRemoveClick = ()=>{
+        //grab id from props
+        this.props.removeTodo(this.props.id)
+    };
     
     render(){
         // console.log(this.props);
@@ -14,7 +19,7 @@ class Todo extends Component{
         return(
             <div className="todo">
                 <div className="todo-body">
-                    <i className="far fa-times-circle todo-remove"></i>
+                    <i className="far fa-times-circle todo-remove" onClick={this.handleTodoRemoveClick}></i>
                     <div className="todo-content">
                         {this.props.content}
                     </div>
@@ -24,7 +29,7 @@ class Todo extends Component{
                 </div>
             </div>
         );
-    }
+    };
 }
 
 export default Todo;
