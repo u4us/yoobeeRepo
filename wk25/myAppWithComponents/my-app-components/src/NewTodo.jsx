@@ -31,7 +31,7 @@ class NewTodo extends Component{
             content: this.state.contentInput,
             priority: this.state.priorityInput
         }
-        this.props.addTodo(data)
+        this.props.addTodo(data);
     };
 
     render(){
