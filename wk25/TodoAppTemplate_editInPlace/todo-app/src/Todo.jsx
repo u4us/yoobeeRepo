@@ -7,15 +7,12 @@ class Todo extends Component{
 
     }
 
-<<<<<<< HEAD
-=======
     // 11. handle hook the passed function from App
     handleTodoRemoveClick = ()=>{
         //grab id from props
         this.props.removeTodo(this.props.id)
     };
     
->>>>>>> 6137f57fb2d4cafc79b289f6668bf7ffde9b8351
     render(){
         // console.log(this.props);
 
