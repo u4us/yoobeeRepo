@@ -40,7 +40,7 @@ class App extends Component{
         });
     };
 
-    // 9. console, $r.removeTodo(1)
+    // 10. console, $r.removeTodo(1)
     removeTodo = (id) =>{
         var todos = this.state.todos;
         //!== ==; part of the list
@@ -78,7 +78,7 @@ class App extends Component{
                                 var todoProps = {
                                     ...todo,
                                     key: todo.id,
-                                    // 10. pass the function to the Todo Component
+                                    // 11. pass the function to the Todo Component
                                     removeTodo: this.removeTodo
                                 };
                                 return(

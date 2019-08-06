@@ -31,7 +31,7 @@ class NewTodoForm extends Component{
     handleTodoAddClick = (e)=>{
         e.preventDefault();
 
-        // 10. grab the passed function from the App
+        // 9. grab the passed function from the App
         var data = {
             content: this.state.contentInput,
             priority: this.state.priorityInput

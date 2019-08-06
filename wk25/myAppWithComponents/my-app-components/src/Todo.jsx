@@ -3,7 +3,10 @@ import React,{Component} from 'react';
 class Todo extends Component{
     constructor(props){
         super(props);
+    };
 
+    handleRemoveTodoClick = (e) =>{
+        this.props.removeTodo(this.props.id);
     };
 
     render(){
@@ -19,7 +22,7 @@ class Todo extends Component{
                         this.props.priority
                     }
                 </div>
-                <i className="fas fa-minus-circle"></i>
+                <i className="fas fa-minus-circle" onClick={this.handleRemoveTodoClick}></i>
             </div>
         )
     };

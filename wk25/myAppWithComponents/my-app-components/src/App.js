@@ -31,12 +31,22 @@ class App extends React.Component{
             id: Date.now(),
             ...data
         };
-
-        var newList = [this.state.todos,...newTodo];
-
+        var newList = [...this.state.todos,newTodo];
         this.setState(
             {
                 todos: newList
+            }
+        );
+    }
+
+    removeTodo = (id)=>{
+        var todos = this.state.todos;
+        var filtered = todos.filter((bob)=>{
+            return bob.id !== id
+        });
+        this.setState(
+            {
+                todos: filtered
             }
         );
     }
@@ -57,7 +67,8 @@ class App extends React.Component{
                             this.state.todos.map((todo)=>{
                                 var todoProps = {
                                     ...todo,
-                                    key: todo.id
+                                    key: todo.id,
+                                    removeTodo: this.removeTodo
                                 }
                                 return(
                                     <Todo {...todoProps}/>
