@@ -52,8 +52,26 @@ class App extends Component{
         });
     };
 
+    // 12. pass updateTodo function to Todo
+    //create the function, but have not passed yet
     updateTodo = (id, data) =>{
-
+        //grab list of todos
+        var todoList = this.state.todos;
+        //find the id
+        var index = todoList.findIndex(function(item){
+            //return true false if exist
+            return item.id == id;
+        });
+        //console.log(index);
+        //spread old content, mix in new data
+        var updatedTodo = {...todoList[index],...data};
+        //console.log(updatedTodo);
+        todoList[index] = updatedTodo;
+        this.setState(
+            {
+                todos: todoList
+            }
+        );
     };
 
     render(){
@@ -79,7 +97,9 @@ class App extends Component{
                                     ...todo,
                                     key: todo.id,
                                     // 11. pass the function to the Todo Component
-                                    removeTodo: this.removeTodo
+                                    removeTodo: this.removeTodo,
+                                    // 18. pass updateTodo to Todo, handle in Blur in Todo
+                                    updateTodo: this.updateTodo
                                 };
                                 return(
                                     // <Todo content={todo.content} priority={todo.priority}/>
@@ -102,3 +122,7 @@ class App extends Component{
 }
 
 export default App;
+
+//CRUD app, POST(?) REST
+//componentWillUpdate
+//componentDidUpdate
