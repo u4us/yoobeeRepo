@@ -51,6 +51,19 @@ class App extends React.Component{
         );
     }
 
+    updateTodo = (id, data)=>{
+        var todoList = this.state.todos;
+        var index = todoList.findIndex(function(item){
+            return item.id === id;
+        });
+        todoList[index] = {...todoList[index],...data}
+        this.setState(
+            {
+                todos: todoList
+            }
+        );
+    }
+
     render(){
         return(
             <div className="container">
@@ -68,7 +81,8 @@ class App extends React.Component{
                                 var todoProps = {
                                     ...todo,
                                     key: todo.id,
-                                    removeTodo: this.removeTodo
+                                    removeTodo: this.removeTodo,
+                                    updateTodo: this.updateTodo,
                                 }
                                 return(
                                     <Todo {...todoProps}/>
