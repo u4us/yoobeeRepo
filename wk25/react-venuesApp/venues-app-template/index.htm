@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+  </head>
+  <body>
+    <!-- example content -->
+    <div class="app">
+      <div class="container">
+        <div class="venues">
+
+          <div class="card venue">
+            <div class="card-body">
+              <h1 class="venue-name" data-toggle="modal" data-target="#venue-modal">The Store</h1>
+              <p>5B Gore St</p>
+              <p>Auckland</p>
+              <p><span class="badge venue-type">Café</span></p>
+            </div>
+          </div>
+          <div class="card venue">
+            <div class="card-body">
+              <h1 class="venue-name">The Store</h1>
+              <p>5B Gore St</p>
+              <p>Auckland</p>
+              <p><span class="badge venue-type">Café</span></p>
+            </div>
+          </div>
+          <div class="card venue">
+            <div class="card-body">
+              <h1 class="venue-name">The Store</h1>
+              <p>5B Gore St</p>
+              <p>Auckland</p>
+              <p><span class="badge venue-type">Café</span></p>
+            </div>
+          </div> 
+        </div> 
+
+        <div class="venue-filters">
+          
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <div role="group" class="btn-group btn-group-toggle">
+              <label class="venue-filter btn active btn-primary">
+                <input name="venue-filter" type="radio" autocomplete="off" value="all" checked="">All
+              </label>
+              <label class="venue-filter btn btn-primary">
+                <input name="venue-filter" type="radio" autocomplete="off" value="food">Food
+              </label>
+              <label class="venue-filter btn btn-primary">
+                <input name="venue-filter" type="radio" autocomplete="off" value="drinks">Drinks
+              </label>
+              <label class="venue-filter btn btn-primary">
+                <input name="venue-filter" type="radio" autocomplete="off" value="others">Others
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="venue-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+     
+            <div class="modal-body">
+
+              <div class="venue-popup-body row">
+                <div class="col-6">
+                  <h1 class="venue-name">The Store</h1>
+                  <p>5B Gore St</p>
+                  <p>Auckland</p>
+                  <p><span class="badge venue-type">Café</span></p>
+                </div>
+                <div class="col-6">
+                  <img src="https://fastly.4sqi.net/img/general/200x200/194220_nI7vTqtIFQncbe7Zgn_XLymzqM78Cx-aZ_gySunjz-M.jpg" class="img-fluid" alt="Responsive image">
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+</html>
