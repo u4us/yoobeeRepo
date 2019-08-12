@@ -5,38 +5,74 @@ import Form from 'react-bootstrap/Form';
 import Article from './Article';
 import './App.css';
 
+var keyCode = 'b37ed9c772d940c2ace3d420fa4a72f3';
+var key = '?apiKey='+keyCode;
+
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
-			articles: [
-				{
-					source: {
-						id: 0,
-						name: "Etonline.com"
-					},
-					author: "Emily Krauser‍",
-					title: "2019 Teen Choice Awards: Red Carpet Arrivals - Entertainment Tonight",
-					description: "Check out all the bold and fabulous looks from the awards show, which took place in Hermosa Beach, California, on Aug. 11",
-					url: "https://www.etonline.com/gallery/2019-teen-choice-awards-red-carpet-arrivals-130251",
-					urlToImage: "https://www.etonline.com/sites/default/files/styles/max_1280x720/public/images/2019-08/1280tca_1.jpg?itok=WjbA9T0y",
-					publishedAt: "2019-08-11T22:39:07Z",
-					content: "Get your surfboards out! The 2019 Teen Choice Awards took place in Hermosa Beach, California, on Aug. 11, and your fave celebs from music, film, television, sports, fashion, comedy and YouTube hit the red carpet in full force! Click through the gallery to see… [+38 chars]"
-				},
-
-			],
-			activeKey:'politics'
+			politicsArticles: [],
+			businessArticles:[],
+			sportsArticles: [],
+			searchArticles: [],
+			activeKey:'politics',
+			keyword: ''
 		}
 	}
 
 	handleTabSelect = (key, e) => {
-		this.setState({activeKey:key})
+		this.setState({activeKey:key});
 	}
 
 	handleSearchSubmitClick = (e) => {
 		e.preventDefault();
 		this.setState({activeKey:'search'})
+		// this.loadHeadlinesByTerm(this.state.activeKey);
 	}
+
+	loadHeadlinesByCategory = (category)=>{
+		var articlesURL = 'https://newsapi.org/v2/top-headlines'+key+'&category='+category;
+		fetch(articlesURL)
+			.then( res=>res.json())
+			.then((data)=>{
+				var articles = data.articles;
+				// console.log(articles);
+
+				switch (category) {
+					case 'politics':
+						this.setState({politicsArticles:articles})
+						break;
+					case 'business':
+						this.setState({businessArticles:articles})
+						break;
+					case 'sports':
+						this.setState({sportsArticles:articles})
+						break;
+					default:
+						break;
+				}
+			})
+	}
+
+	loadHeadlinesByTerm = (term)=>{
+		var articlesURL = 'https://newsapi.org/v2/top-headlines'+key+'&q='+term;
+		fetch(articlesURL)
+			.then( res=>res.json())
+			.then((data)=>{
+				var articles = data.articles;
+				console.log(articles);
+				this.setState({searchArticles:articles})
+			})
+	}
+
+	componentDidMount(){
+		this.loadHeadlinesByCategory('politics');
+		this.loadHeadlinesByCategory('business');
+		this.loadHeadlinesByCategory('sports');
+		// this.loadHeadlinesByTerm(this.state.keyword);
+	}
+
 	render(){
 		return (
 			<div className="container">
@@ -49,7 +85,7 @@ class App extends Component {
 					<Nav.Link eventKey="politics">Politics</Nav.Link>
 					</Nav.Item>
 					<Nav.Item>
-					<Nav.Link eventKey="business">Businsess</Nav.Link>
+					<Nav.Link eventKey="business">Business</Nav.Link>
 					</Nav.Item>
 					<Nav.Item>
 					<Nav.Link eventKey="sports">Sports</Nav.Link>
@@ -57,31 +93,35 @@ class App extends Component {
 				</Nav>
 
 				<form className="col-5">
-					<div class="form-row align-items-center justify-content-end">
-					<div class="col-auto">
+					<div className="form-row align-items-center justify-content-end">
+					<div className="col-auto">
 						<input type="text" className="form-control mb-2 search-input" placeholder="Enter keywords"/>
 					</div>
 					
-					<div class="col-auto">
+					<div className="col-auto">
 						<button onClick={this.handleSearchSubmitClick} type="submit" className="btn btn-primary mb-2 search-submit">Search</button>
 					</div>
 					</div>
 				</form>
 				</div>
 
-				
 				<Tab.Content>
 				<Tab.Pane className="tab-pane" eventKey="politics">
 					<h1>Politics</h1>
 
 					<div className="articles">
-				
-					<Article {...articles}/>
-
-					<Article />
-
-					<Article />
-
+					{
+						this.state.politicsArticles.map((article,index)=>{
+							var articleProps = {
+								...article,
+								key: index,
+							}
+							return(
+								<Article {...articleProps}/>
+							)
+						})
+					}
+					
 					</div>
 				</Tab.Pane>
 
@@ -89,29 +129,59 @@ class App extends Component {
 					<h1>Business</h1>
 					<div className="articles">
 
-					<Article />
-
-					<Article />
+					{
+						this.state.businessArticles.map((article,index)=>{
+							var articleProps = {
+								...article,
+								key: index,
+							}
+							return(
+								<Article {...articleProps}/>
+							)
+						})
+					}
 
 					</div>
 				</Tab.Pane>
 
 				<Tab.Pane className="tab-pane" eventKey="sports">
 					<h1>Sports</h1>
+
+					<div className="articles">
+
+					{
+						this.state.sportsArticles.map((article,index)=>{
+							var articleProps = {
+								...article,
+								key: index,
+							}
+							return(
+								<Article {...articleProps}/>
+							)
+						})
+					}
+
+					</div>
 				</Tab.Pane>
 
 				<Tab.Pane className="tab-pane" eventKey="search">
 					<h1>Search Results</h1>
 
-					<div className="article">
-					<h5>Apple is giving out a special iPhone that can lead to a $1 million reward</h5>
-					<p><span class="badge badge-primary">Phonearena.com</span></p>
-					</div>
+					{
+						this.state.searchArticles.map((article,index)=>{
+							var articleProps = {
+								...article,
+								key: index,
+							}
+							return(
+								<Article {...articleProps}/>
+							)
+						})
+					}
 					
 				</Tab.Pane>
 
 				</Tab.Content>
-			
 			</Tab.Container>
 			</div>
 		);
