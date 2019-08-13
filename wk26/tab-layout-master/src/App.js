@@ -17,7 +17,7 @@ class App extends Component {
 			sportsArticles: [],
 			searchArticles: [],
 			activeKey:'politics',
-			keyword: ''
+			keyword: 'null'
 		}
 	}
 
@@ -28,11 +28,11 @@ class App extends Component {
 	handleSearchSubmitClick = (e) => {
 		e.preventDefault();
 		this.setState({activeKey:'search'})
-		// this.loadHeadlinesByTerm(this.state.activeKey);
+		this.loadHeadlinesByTerm(this.state.keyword);
 	}
 
 	loadHeadlinesByCategory = (category)=>{
-		var articlesURL = 'https://newsapi.org/v2/top-headlines'+key+'&category='+category;
+		var articlesURL = 'https://newsapi.org/v2/top-headlines'+key+'&country=us&category='+category;
 		fetch(articlesURL)
 			.then( res=>res.json())
 			.then((data)=>{
@@ -61,16 +61,22 @@ class App extends Component {
 			.then( res=>res.json())
 			.then((data)=>{
 				var articles = data.articles;
-				console.log(articles);
+				// console.log(articles);
 				this.setState({searchArticles:articles})
 			})
+	}
+
+	handleInputChange = (e)=>{
+		this.setState({
+			keyword: e.target.value
+		})
 	}
 
 	componentDidMount(){
 		this.loadHeadlinesByCategory('politics');
 		this.loadHeadlinesByCategory('business');
 		this.loadHeadlinesByCategory('sports');
-		// this.loadHeadlinesByTerm(this.state.keyword);
+		this.loadHeadlinesByTerm(this.state.keyword);
 	}
 
 	render(){
@@ -95,9 +101,8 @@ class App extends Component {
 				<form className="col-5">
 					<div className="form-row align-items-center justify-content-end">
 					<div className="col-auto">
-						<input type="text" className="form-control mb-2 search-input" placeholder="Enter keywords"/>
+						<input type="text" className="form-control mb-2 search-input" placeholder="Enter keywords" onChange={this.handleInputChange}/>
 					</div>
-					
 					<div className="col-auto">
 						<button onClick={this.handleSearchSubmitClick} type="submit" className="btn btn-primary mb-2 search-submit">Search</button>
 					</div>
@@ -106,81 +111,71 @@ class App extends Component {
 				</div>
 
 				<Tab.Content>
-				<Tab.Pane className="tab-pane" eventKey="politics">
-					<h1>Politics</h1>
+					<Tab.Pane className="tab-pane" eventKey="politics">
+						<h1>Politics</h1>
+						<div className="articles">
+						{
+							this.state.politicsArticles.map((article,index)=>{
+								var articleProps = {
+									...article,
+									key: index,
+								}
+								return(
+									<Article {...articleProps}/>
+								)
+							})
+						}
+						</div>
+					</Tab.Pane>
 
-					<div className="articles">
-					{
-						this.state.politicsArticles.map((article,index)=>{
-							var articleProps = {
-								...article,
-								key: index,
-							}
-							return(
-								<Article {...articleProps}/>
-							)
-						})
-					}
-					
-					</div>
-				</Tab.Pane>
+					<Tab.Pane className="tab-pane" eventKey="business">
+						<h1>Business</h1>
+						<div className="articles">
+						{
+							this.state.businessArticles.map((article,index)=>{
+								var articleProps = {
+									...article,
+									key: index,
+								}
+								return(
+									<Article {...articleProps}/>
+								)
+							})
+						}
+						</div>
+					</Tab.Pane>
 
-				<Tab.Pane className="tab-pane" eventKey="business">
-					<h1>Business</h1>
-					<div className="articles">
+					<Tab.Pane className="tab-pane" eventKey="sports">
+						<h1>Sports</h1>
+						<div className="articles">
+						{
+							this.state.sportsArticles.map((article,index)=>{
+								var articleProps = {
+									...article,
+									key: index,
+								}
+								return(
+									<Article {...articleProps}/>
+								)
+							})
+						}
+						</div>
+					</Tab.Pane>
 
-					{
-						this.state.businessArticles.map((article,index)=>{
-							var articleProps = {
-								...article,
-								key: index,
-							}
-							return(
-								<Article {...articleProps}/>
-							)
-						})
-					}
-
-					</div>
-				</Tab.Pane>
-
-				<Tab.Pane className="tab-pane" eventKey="sports">
-					<h1>Sports</h1>
-
-					<div className="articles">
-
-					{
-						this.state.sportsArticles.map((article,index)=>{
-							var articleProps = {
-								...article,
-								key: index,
-							}
-							return(
-								<Article {...articleProps}/>
-							)
-						})
-					}
-
-					</div>
-				</Tab.Pane>
-
-				<Tab.Pane className="tab-pane" eventKey="search">
-					<h1>Search Results</h1>
-
-					{
-						this.state.searchArticles.map((article,index)=>{
-							var articleProps = {
-								...article,
-								key: index,
-							}
-							return(
-								<Article {...articleProps}/>
-							)
-						})
-					}
-					
-				</Tab.Pane>
-
+					<Tab.Pane className="tab-pane" eventKey="search">
+						<h1>Search Results</h1>
+						{
+							this.state.searchArticles.map((article,index)=>{
+								var articleProps = {
+									...article,
+									key: index,
+								}
+								return(
+									<Article {...articleProps}/>
+								)
+							})
+						}
+					</Tab.Pane>
 				</Tab.Content>
 			</Tab.Container>
 			</div>

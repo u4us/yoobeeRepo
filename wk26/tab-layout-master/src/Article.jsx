@@ -10,7 +10,15 @@ class Article extends React.Component{
             <div className="article">
                 <h5>{this.props.title}</h5>
                 <p>{this.props.description}</p>
-                <p><span className="badge badge-primary">{this.props.author}</span></p>
+                <p>
+                    {
+                        this.props.author !== null ?
+                        'by ' + this.props.author + ' '
+                        :''
+                    }
+                    on {this.props.publishedAt}
+                </p>
+                <p><span className="badge badge-primary">{this.props.source.name}</span></p>
             </div>
         )
     }
