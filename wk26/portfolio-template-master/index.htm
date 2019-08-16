@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="app">
+		
+		<div class="view color1 active">
+			<div class="header">
+				<i class="fas fa-plus"></i>
+				<i class="fas fa-bars"></i>
+			</div>
+			<div class="main">
+				<h3>Projects</h3>
+				<div class="card project">
+				  <img class="card-img-top" src="project.jpg" alt="Card image cap" />
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+				    <p class="card-text">Some quick example text to build on the card title</p>
+				    <p>
+				    	<i class="fas fa-heart"></i>
+				    	<i class="fas fa-edit"></i>
+				    	<i class="fas fa-trash"></i>
+				    </p>
+				 
+				  </div>
+				</div>
+
+			</div>
+		</div>
+		<div class="view color2">
+			<div class="header"><i class="fas fa-times"></i></div>
+			<div class="main">
+				<h3>Add a project</h3>
+				<form>
+				  <div class="form-group">
+				    <label for="name-input">Name</label>
+				    <input type="text" class="form-control" name="name-input" id="name-input" placeholder="Enter project name"/>
+				  </div>
+				  <div class="form-group">
+				    <label for="name-input">Description</label>
+				    <input type="text" class="form-control" name="description-input" id="description-input" placeholder="Enter project description"/>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="name-input">Photo</label>
+				    <input type="text" class="form-control" name="photo-input" id="photo-input" value="project.jpg"/>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="type-input">Type</label>
+				    <select class="form-control" name="type-input" id="type-input">
+				      <option value="1">Painting</option>
+				      <option value="2">Sculpture</option>
+				      <option value="3">Digital</option>
+				    </select>
+				  </div>
+
+				  <button type="submit" class="btn btn-primary">Add</button>
+				</form>
+			</div>
+		</div>
+		<div class="view color3">
+			<div class="header"><i class="fas fa-times"></i></div>
+			<div class="main">
+				<h2>Update Projects</h2>
+			
+			</div>
+		</div>
+		<div class="view color4">
+			<div class="header"><i class="fas fa-times"></i></div>
+			<div class="main">
+				<h3>Login</h3>
+				<form>
+				  <div class="form-group">
+				    <label for="name-input">Username</label>
+				    <input type="text" class="form-control" nam="username-input" id="username-input" placeholder="Enter username"/>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="name-input">Password</label>
+				    <input type="password" class="form-control" name="password-input" id="password-input" placeholder="Enter password"/>
+				  </div>
+				  <button type="submit" class="btn btn-primary">Login</button>
+				</form>
+			</div>
+		</div>
+		<div class="view color5">
+			<div class="header"><i class="fas fa-times"></i></div>
+			<div class="main">
+				<h3>Signup</h3>
+				<form>
+				  <div class="form-group">
+				    <label for="name-input">Username</label>
+				    <input type="text" class="form-control" name="username-input" id="username-input" placeholder="Enter username"/>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="name-input">Password</label>
+				    <input type="password" class="form-control" name="password-input" id="password-input" placeholder="Enter password"/>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="name-input">Email</label>
+				    <input type="email" class="form-control" name="email-input" id="email-input" placeholder="Enter email"/>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="name-input">Intro</label>
+				    <input type="text" class="form-control" name="intro-input" id="intro-input" placeholder="Enter introduction"/>
+				  </div>
+
+				  <button type="submit" class="btn btn-primary">Join</button>
+				</form>
+			</div>
+		</div>
+		<div class="view color0">
+			<div class="header"><i class="fas fa-times"></i></div>
+			<div class="main">
+				<ul class="menu">
+					<li><a class="color1" href="">Projects</a></li>
+					<li><a class="color2" href="">Add a project</a></li>
+					<li><a class="color4" href="">Login</a></li>
+					<li><a class="color5" href="">Signup</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+	
+</body>
+</html>
