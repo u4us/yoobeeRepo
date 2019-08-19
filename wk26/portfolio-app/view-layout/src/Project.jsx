@@ -5,6 +5,19 @@ class Project extends React.Component{
         super(props);
     }
 
+    handleTrashClick = () =>{
+        var {deleteProject, id} = this.props;
+        deleteProject(id);
+    }
+
+    handleEditClick = () =>{
+// 18. add setProjectToUpdate
+        var {setActiveView, setProjectToUpdate, id} = this.props;
+        setProjectToUpdate(id);
+        setActiveView('edit-project');
+
+    }
+
 	render(){
         var {name, description} = this.props;
 
@@ -16,8 +29,9 @@ class Project extends React.Component{
                 <p className="card-text">{description}</p>
                 <p>
                     <i className="fas fa-heart"></i>
-                    <i className="fas fa-edit"></i>
-                    <i className="fas fa-trash"></i>
+                    {/* 13. handleEditClick */}
+                    <i onClick={this.handleEditClick}className="fas fa-edit"></i>
+                    <i onClick={this.handleTrashClick} className="fas fa-trash"></i>
                 </p>
             
             </div>
