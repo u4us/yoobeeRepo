@@ -6,6 +6,9 @@ import AddForm from './AddForm'
 import EditForm from './EditForm'
 import './App.css';
 
+// in the spirit of react, components should be unmounted when not in view.
+// remove activeView concept 23.
+
 // var urlPrefix = 'https://10.4.24.22:3001/api'
 // var urlPrefix = 'http://localhost:3001/api'
 var urlPrefix = 'http://10.2.24.38:4000/api'
@@ -147,7 +150,7 @@ class App extends React.Component{
 						<ul className="menu">
 							<li><a onClick={()=>{this.setActiveView('projects')}} className="color1" href="#">Project</a></li>
 							<li><a onClick={()=>{this.setActiveView('add-project')}} className="color2" href="#">Add-project</a></li>
-							<li><a onClick={()=>{this.setActiveView('edit-project')}} className="color3" href="#">Edit-project</a></li>
+							{/* <li><a onClick={()=>{this.setActiveView('edit-project')}} className="color3" href="#">Edit-project</a></li> */}
 
 						</ul>
 

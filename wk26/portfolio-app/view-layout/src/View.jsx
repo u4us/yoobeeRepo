@@ -14,14 +14,19 @@ class View extends React.Component{
 
         //when same, active, else not active; assign to div
         //; can also reassign back to className
-        var newClassName = (viewName == activeView) ? 'view active ' + className : 'view ' + className
+        // space needed between classes
+        // var newClassName = (viewName == activeView) ? 'view active ' + className : 'view ' + className
 
-		return(
-            //space needed between classes
+        var newClassName = 'view ' + className
+
+        // ## if active? insert view: dont insert view
+            
+        return (viewName == activeView)? (
+            
             <div className={newClassName}>
                 {children}
             </div>
-		)
+		): null;
 	}
 }
 

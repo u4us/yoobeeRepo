@@ -16,7 +16,7 @@ class EditForm extends React.Component{
             description: formData.get('description-input')
         };
         
-// 22. pull data
+// 22. pull data ###############################################################
         var {updateProject, id, setActiveView} = this.props;
         updateProject(id, data);
         setActiveView('projects');
@@ -24,7 +24,7 @@ class EditForm extends React.Component{
     }
 
 	render(){
-        //20. pull data from passed values, use defaultValue>Value
+        //20. pull data from passed values, use defaultValue>Value, so no need for onchange
         var {name, description}= this.props;
 		return(
 
@@ -40,8 +40,9 @@ class EditForm extends React.Component{
 
                 <div className="form-group">
                     <label htmlFor="name-input">Photo</label>
-                    <input type="text" className="form-control" name="photo-input" id="photo-input" value="project.jpg"/>
+                    <input type="text" className="form-control" name="photo-input" id="photo-input" />
                 </div>
+                {/* value="project.jpg" */}
 
                 <div className="form-group">
                     <label htmlFor="type-input">Type</label>
