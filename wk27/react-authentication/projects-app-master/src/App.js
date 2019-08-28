@@ -291,22 +291,12 @@ class  App extends Component {
                     </>
                   )
                 }
-                
-
-                
-         
               </ul>
-
             </div>
-
           </View>
-
         </div>
     );
   }
-
-
-
 }
 
 export default App;
