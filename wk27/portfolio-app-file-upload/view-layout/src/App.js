@@ -11,7 +11,7 @@ import './App.css';
 
 // var urlPrefix = 'https://10.4.24.22:3001/api'
 // var urlPrefix = 'http://localhost:3001/api'
-var urlPrefix = 'http://10.2.24.43:4000/api'
+var urlPrefix = 'http://10.2.24.60:4000/api'
 
 class App extends React.Component{
 	constructor(props){
