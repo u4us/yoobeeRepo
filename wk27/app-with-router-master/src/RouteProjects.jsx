@@ -27,19 +27,20 @@ class RouteProjects extends Component {
 
   render(){
     return (
-          <div className="main">
-            <h3>All Projects</h3>
-              {
-                this.state.projects.map((project) => {
+      <div className="main">
+        <h3>All Projects</h3>
+        {
+          this.state.projects.map((project) => {
 
-                  var projectProps = {
-                    ...project,
-                    key: project.id,
-                  };
-                  return (<Project {...projectProps} />)
-                })
-              }
-          </div>
+            var projectProps = {
+              ...project,
+              key: project.id,
+              refreshData: this.routeGetProjects,
+            };
+            return (<Project {...projectProps} />)
+          })
+        }
+      </div>
     );
   }
 }

@@ -11,26 +11,42 @@ var serverURL = 'http://10.2.24.38:3001/'
 
 
 var getProjects = () => {
-    return axios.get(urlPrefix+'/projects')
+  return axios.get(urlPrefix+'/projects')
     // .then(res => {
     //   this.setState({projects:res.data});
     // })
 }
 
 var getSingleProject = (id) => {
-    return axios.get(urlPrefix+'/projects/'+id)
+  return axios.get(urlPrefix+'/projects/'+id)
 }
 
 var getTypes = () => {
-    return axios.get(urlPrefix+'/types')
+  return axios.get(urlPrefix+'/types')
 }
 
 var addProjects = (data) => {
-    return axios.post(urlPrefix+'/projects',data)
+  return axios.post(urlPrefix+'/projects',data)
 }
 
 var updateProjects = (id,data) => {
-    return axios.put(urlPrefix+'/projects/'+id,data)
-  }
+  return axios.put(urlPrefix+'/projects/'+id,data)
+}
 
-export {getProjects, getTypes, addProjects, getSingleProject, updateProjects}
+var deleteProjects = (id) => {
+  return axios.delete(urlPrefix+'/projects/'+id)
+}
+
+var getSingleType = (id) => {
+  return axios.get(urlPrefix+'/types/'+id)
+}
+
+var authenticate = (data) => {
+  return axios.post(urlPrefix+'/authenticate',data)
+}
+
+var getSingleUser = (id) => {
+  return axios.get(urlPrefix+'/users/'+id)
+}
+
+export {getProjects, getTypes, addProjects, getSingleProject, updateProjects, deleteProjects, getSingleType, authenticate, getSingleUser}
